@@ -1958,6 +1958,15 @@ I found the title menu still live under the opening splash. This evening's first
 
 ---
 
+### 23:20 to 23:45: The build goes up, the videos get smaller
+**Asked:** I dragged the 383 MB zip onto the itch page myself, since the agent's Chrome tool can't upload anything over 10 MB. Then: get two new cuts ready for YouTube with ffmpeg.
+
+**Done:** both re-encoded with H.264 at CRF 21, a steady 30 fps and 384 kbps audio, set up so YouTube can start processing before the upload finishes. `mindseed_ReelLives_youtube.mp4` (1440p, 1:45) went from 247 MB to 233 MB. `mindseed_Reel-Lives_gameplay_short_youtube.mp4` went from 266 MB to 61 MB.
+
+**Setback:** the first encode, at CRF 18, came out larger than the source (304 MB). The source's header also claims 60 fps when the footage is really about 30 with some unevenness, so the output is fixed at 30.
+
+---
+
 <a id="cut"></a>
 
 ## Cutting room floor
