@@ -11,7 +11,7 @@ Times are South Africa time (UTC+2). Screenshots are in `devlog-shots/`.
 | **Game** | Reel Lives, a runner across three strips of film. [Play it on itch.io](https://mindseed.itch.io/reel-lives) |
 | **Made by** | One person (Shane Storms, mindseed) directing Claude agents in Unreal Engine 5.9, Blueprint only |
 | **How to read an entry** | **Asked** is what I told the agents. **Done** is what they built. **Checked** is how it was tested. **Setbacks** are what went wrong |
-| **In this log** | 137 timed entries, 272 screenshots, 83 ideas on the cutting room floor |
+| **In this log** | 138 timed entries, 273 screenshots, 83 ideas on the cutting room floor |
 
 ---
 
@@ -1929,6 +1929,22 @@ I found the title menu still live under the opening splash. This evening's first
 - **This log.** Day 3 had no heading, one entry sat below the cutting room floor, and a blank line had split the cutting-room table in two. Fixed, with a jump list and a short table at the top.
 
 **Checked:** the gremlin patch applied, compiled clean and reads back with all 18 throws changed. **Not seen in play yet**, and the splash fix is still unplayed; both are for my first minute in the new build.
+
+---
+
+### 22:50 to 23:00: The final build, and the itch page brought up to date
+**Asked:** check my itch page, confirm which gameplay video it uses, build the final package, and tell me where to read this log on my own machine.
+
+**Done:**
+- **The build.** Shipping package `X:\GameJamBuilds\ship_1115_2300` (529 MB), cook and build clean in 2 minutes 23 seconds, no errors, no "Default Material" and no Suno assets in the log. Zipped as `X:\GameJamBuilds\mindseed_ReelLives.zip` (383 MB, top folder `ReelLives`, `ReelLives.exe`, no save file inside). The 16:52 zip is kept beside it as `mindseed_ReelLives_old1652.zip`.
+- **The itch page** was still telling the old story. Through my own Chrome, the agent swapped the tagline and eight lines of the description for the reels wording and added the dev log link, then saved. The page is still a draft with no build uploaded.
+- **The video.** The page embeds my YouTube video, which is public. It runs 1 minute 54, and the jam form asks for 30 to 60 seconds, so a 58-second cut is waiting in `video/` in case I swap it.
+
+**Checked:** unzipped into an empty folder and run muted: the window says Reel Lives and the title shows the new line. Only the title was looked at; the splash click and the gremlin bits are still mine to try.
+
+![The final build's title, from a clean unzip](devlog-shots/2026-11-15_2256_final-build-2300-title.png)
+
+**Setback:** the agent opened the YouTube page to read the video's length and it started playing out loud in a hidden browser tab. I asked where the music was coming from.
 
 ---
 
