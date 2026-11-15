@@ -4,7 +4,18 @@ Solo developer directing AI agents. Theme: Director's Cut.
 This log records what I asked the agents to do, what they did, what made the cut and what didn't.
 Times are South Africa time (UTC+2). Screenshots are in `devlog-shots/`.
 
+**Jump to:** [Pre-jam](#prejam) · [Day 1, 12 Nov](#day1) · [Day 2, 13 Nov](#day2) · [Day 3, 14 Nov](#day3) · [Day 4, 15 Nov](#day4) · [Cutting room floor](#cut)
+
+| | |
+|---|---|
+| **Game** | Reel Lives, a runner across three strips of film. [Play it on itch.io](https://mindseed.itch.io/reel-lives) |
+| **Made by** | One person (Shane Storms, mindseed) directing Claude agents in Unreal Engine 5.9, Blueprint only |
+| **How to read an entry** | **Asked** is what I told the agents. **Done** is what they built. **Checked** is how it was tested. **Setbacks** are what went wrong |
+| **In this log** | 137 timed entries, 272 screenshots, 83 ideas on the cutting room floor |
+
 ---
+
+<a id="prejam"></a>
 
 ## Pre-jam (declared material)
 
@@ -15,6 +26,8 @@ Times are South Africa time (UTC+2). Screenshots are in `devlog-shots/`.
 - Tried an agent-driven overnight download of UE 5.9 Preview with a scheduled task. It got too fiddly, so I cancelled it and started the download by hand.
 
 ---
+
+<a id="day1"></a>
 
 ## Day 1: 2026-11-12
 
@@ -374,6 +387,8 @@ Times are South Africa time (UTC+2). Screenshots are in `devlog-shots/`.
 - **Setback, small:** the wrap first fired on "the moment the clock passes 238 s", and a 30 s skip jumped right over it. It now fires on "past 238 s and not yet wrapped".
 - **Claude's calls, for me to confirm:** the timings above; childhood is 28 s. Lives carry across the whole reel, and losing all three restarts the reel from childhood. The brief's softer tutorial rule ("death in the tutorial respawns you at the last fork") is not in yet.
 - **Not verified at full speed:** whether four minutes of this is fair or fun. The editor runs at about 3 fps behind other windows, so all of this was checked by script, with slow motion and skips.
+
+<a id="day2"></a>
 
 ## Day 2: 2026-11-13
 
@@ -999,6 +1014,10 @@ Nothing is built yet; I pick next session.
 
 ---
 
+<a id="day3"></a>
+
+## Day 3: 2026-11-14
+
 ### 00:05 (2026-11-14): My play: the goblins
 
 **Verdict:** the goblins are all right, but nothing to write home about and not exciting. They're much more animated, which is good; they just need a better model. I'll get Fable to make them. Good try anyway.
@@ -1442,6 +1461,8 @@ Also tonight, before bed, I gave Claude a new list (robot remodel from my design
 
 ---
 
+<a id="day4"></a>
+
 ## Day 4: 2026-11-15
 
 ### 00:00: A torn card falls apart, a collected one sings into the jar
@@ -1823,7 +1844,95 @@ Code: `art/clarity/make_sfx1.py`. The takes were picked by loudness shape, not b
 
 **The itch.io check (through my own Chrome, read only):** the Reel Lives page is a draft with the description pasted, but no build, cover, screenshots or video yet, and it must be public before the jam will take it. I've joined the jam and not yet submitted. The real submit form has fields the checklist never had (how to play, student or not, pre-jam list, my take on the theme, modifier tick boxes); answers for each are now in `docs/SUBMISSION.md`.
 
+### 16:50: TODO pass (Hermes)
+Asked: work through docs/TODO.md, tick as I go, no package. Done, all five ticked, none packaged:
+- Window title: DefaultGame.ini now says Reel Lives (shows in the next package).
+- Slow reel music pitch 0.95 to 0.90.
+- Title robot: amber glow out, black drop shadow in.
+- First-time prompts: hop at the start, whack with the first gremlin after 7 s, boost when the film first fills; pad wording if the last play key came from a pad. Seen in PIE: hop and whack.
+- Top-left HUD: TAKES / ENERGY / CRADLES are one plate with drawn lamps and cradles instead of text glyphs. Not looked at on screen yet.
+Setback: this session could not grab the editor window (winshot found no window handle), so no screenshots; Shane to eyeball the title robot and the new HUD block.
+
 ---
+
+### Evening: The last list, on a nearly empty usage limit
+**Asked:** seventeen notes after playing, with very little Claude usage left and the jam closing tonight: make a to-do of all of it, do the simple things first, and write down each thing as it's finished so nothing is left hanging if the limit runs out. The list and its done log are in `docs/FINAL-PASS-2026-11-15.md`.
+
+**Done:**
+- **Tagline.** "Builds a friend from its maker's hands, eyes and heart" read like the robot was taking him apart. New line: *A wind-up robot rummages through its maker's old reels for what he left on the cutting-room floor.* The itch description now tells the reels story: the old projector is worn, one reel stuck on fast and one on slow; in the frames you grab a trinket, an idea, or a bad part from the wrong set. The in-game words still say hands, eyes and heart.
+- **Post-jam ideas** written down in `docs/POST-JAM-IDEAS.md`: a reel library hub, reels with faults as level rules, a friend that grows across runs, strips that reverse, splicing as a tool, co-op, endless daily reel.
+- **Video** squeezed from 572 MB to 103 MB with ffmpeg, same 1080p and length.
+- **HUD plate** moved up and right, labels smaller so they sit inside it; the hint line drops 5 px to sit in the middle of its ribbon; the FLOP / MATINEE / SMASH HIT stamp moves 52 px up onto the end plate's top edge.
+- **Clicks under the splash.** A click or key while the splash shows now only skips the splash. Checked in PIE.
+- **The never-ending game.** Losing all three takes did end the run, but the card said "press any key for TAKE 5", and the restart counted on to TAKE 6 while quietly starting a new run, so it looked as if you never died. A restart now goes back to TAKE 1, and the card says OUT OF TAKES · ANY KEY TO START OVER. Checked in PIE.
+- **Clapping a card wrecks it.** Lunging into a life card used to collect it anyway. Now it turns red, tears into film scraps, tumbles off the strip and costs $50, with SMASHED! on the ribbon. Walking through it still collects it with the gold burst.
+- **Cradles fly home.** A collected cradle now arcs into the cradle slot it fills in the top-left plate, and the cash still flies to the box office. (Every third cradle buys back a lost take.)
+- **Gremlin voices, free.** My two phone recordings were cut at their pauses, cleaned and levelled with ffmpeg into fifteen clips: five cackles, five cheeky high ones and five deep ones for the big gremlins. About a third of gremlins cackle as they arrive, and a big one always cackles as it throws a tomato. No fal credit spent.
+- **Gremlins fall into holes.** Gremlins walking over an open burn, or caught on a strip when it's snipped, now drop through the film instead of all bursting at once. A clap still bursts one in pieces.
+
+- **The Cut gnashes and grinds.** Two new fal sounds (about six cents): a metal bite on every chop of the blade, louder the closer the Cut gets, over a grinding-machinery loop that swells and climbs in pitch as it closes in.
+
+**Not done:** the in-game words for the reels story; a cackle for the boss. **Setbacks:** this session can't capture the PIE viewport, so none of tonight's changes has been looked at on screen, only checked by values and the script log. The last Director patch (holes) timed out mid-apply while the editor sat on a slow compile; it had landed, and compiled clean once the editor was free. No burn opened in the 25-second test, so no gremlin has been seen dropping yet.
+
+---
+
+### 21:50 to 22:10: Looking at the last list on screen
+**Asked:** none of the evening's changes had been seen, because that session couldn't capture the play view. Look at each one and fix what's off.
+
+**Seen, and what changed:**
+- **The plate.** Up and right as asked, but the TAKES / ENERGY / CRADLES labels now ran through the plate's divider line. Labels one size smaller, tighter tracking, right edge 15 px left: they sit inside now. ![before](devlog-shots/2026-11-15_2210_plate-before.png) ![after, with a cradle landing](devlog-shots/2026-11-15_2210_cradle-lands-plate-after.png)
+- **The hint line** is centred in its ribbon. No change. ![hint](devlog-shots/2026-11-15_2210_hint-centred.png)
+- **Clapping a card** fired SMASHED! and -$50, but the card stayed gold: the card material only adds its tint on top of the glow, and the smash had turned the glow off. The smash now darkens the art and keeps a red glow while it tumbles. ![gold](devlog-shots/2026-11-15_2210_smash-gold-before.png) ![red](devlog-shots/2026-11-15_2210_smash-red-after.png)
+- **The cradle** flew to the right slot but vanished just before landing, about one row too high, because its arc was still lifting it when it hid. It now sits on the slot for a fifth of a second before it goes.
+- **Gremlins in holes.** A gremlin standing on a fresh burn flashes and sinks through it, and the gremlins on a snipped strip fall away with it. One thing learned: gremlins ride at the strip's speed, so a burn only catches a gremlin it opens under. ![burn](devlog-shots/2026-11-15_2210_gremlin-burn-drop.png) ![snip](devlog-shots/2026-11-15_2210_gremlins-snipped-strip.png)
+- **The end card.** MATINEE sits with its lower corner on the inner box's edge. OUT OF TAKES · ANY KEY TO START OVER, then TAKE 1. The foot line touched the corner fans, so it lost some spaces. ![cut card and take 1](devlog-shots/2026-11-15_2210_cut-card-matinee-take1.png)
+
+All checked in PIE with the sound muted, from frame bursts of the editor window. Scripts: `art/hud/ue_look1.py`, `art/clarity/make_look1.py`, `art/clarity/make_look1d.py`.
+
+---
+
+### 22:10 to 22:25: The reels story, in the game's own words
+**Asked:** drop "his hands, his eyes, his heart" everywhere in the game and tell the reels story instead, matching the itch page: the robot hunts its maker's old reels for what he left behind; one reel is stuck on fast, one on slow; in the frames it grabs a trinket, an idea, or a bad part from the wrong set. Keep the lines short.
+
+**Changed:**
+- **Title line:** *A wind-up robot hunts its maker's old reels for what he left behind.* The itch tagline ("rummages through ... the cutting-room floor") ran past both sides of the title plate, so the game uses the shorter line. ![title](devlog-shots/2026-11-15_2220_title-new-line.png)
+- **Banners:** BUILD A FRIEND / FROM WHAT HE LEFT IN THE REELS; the acts say STUCK ON SLOW, STUCK ON FAST and THE STEADY REEL, each with HE LEFT THREE THINGS HERE. Pieces are A TRINKET (Booth), AN IDEA (Studio), A KEEPSAKE (Home). A developing card is SOMETHING HE LEFT. A red cog now shouts WRONG SET!, and a whole friend is EVERYTHING HE LEFT BEHIND. ![banners](devlog-shots/2026-11-15_2220_banners-reels.png)
+- **How To Play:** the strips are "stuck on slow / stuck on fast / steady"; WHAT HE LEFT replaces MEMORY CARDS; junk is "bad parts from the wrong set". ![how to play](devlog-shots/2026-11-15_2220_how-to-play-reels.png)
+- **Endings,** two short lines each: *Nine things he left behind, found and fitted. / We walked off the reel together.* · *Still lost in the reels: / Studio ideas  Booth trinkets  Home keepsakes* · *Too many parts from the wrong set went in. / It climbed out of the jar, all teeth and cogs.* · *The foe is scrap. The wrong parts are out. / Next take I build it from what he left.*
+
+**Setback:** the ending lines ran straight into the rating stamp. The earlier move put the stamp up on the inner box's edge, but it was centred, so MATINEE and SMASH HIT grew left over the words. It is now pinned by its lower-left corner on the box's top edge, to the right of the text, a little smaller, and BOX OFFICE LEGEND stamps on two lines. ![before](devlog-shots/2026-11-15_2220_endings-stamp-over-text.png) ![after](devlog-shots/2026-11-15_2220_endings-stamp-fixed.png) ![apart and CUT](devlog-shots/2026-11-15_2220_endings-apart-cut.png)
+
+Checked in PIE (muted): title, How To Play, opening, piece, junk and act banners, and the friend, half, foe-beaten and CUT! cards. Scripts: `art/clarity/make_story2.py` to `make_story5.py`, `art/hud/ue_story2.py`, `art/hud/ue_look2.py`, `art/hud/make_menu_art.py`.
+
+---
+
+### 22:25 to 22:30: Three small leftovers
+- **The foe has a voice.** It cackles deep (my big-gremlin recordings, pitched down to 0.66-0.8) when it lands, on half its throws, and as it gets away.
+- **Cradle cash waits for the cradle.** The +$50 now pops after the cradle icon lands in its slot, not as you touch the card.
+- **The Cut is quiet off the reel.** Its grind and gnash played under the title screen too. They now go silent whenever a run isn't playing (title, menus, pause, end cards).
+
+Checked in PIE by values (sound muted, so none of it heard): grind volume 0 on the title and 0.065 in a run; score unchanged 0.3 s after a cradle, +50 after 0.6 s; the foe fight runs with no script errors. The foe-escaped ending was also seen with the new stamp. Script: `art/clarity/make_left1.py`.
+
+---
+
+### 22:35: The splash still let clicks through
+I found the title menu still live under the opening splash. This evening's first fix only covered half of it: a click during the splash's fade picked whatever menu item sat under the mouse, hovering moved the highlight, and W/S moved it too. Now, while any of the splash is on screen, a click or a key only jumps straight to the menu, and the same press can't also choose an item. Hover waits until the splash is gone. Applied and compiled; not played yet. Script: `art/clarity/make_splash2.py`.
+
+---
+
+### 22:45 to 22:50: A last check before the build, and gremlin bits that stay out of the way
+**Asked:** have Fable check Opus's evening work before the build, tidy this log, and one more note from me: when a gremlin bursts, most of the bits should fly behind the robot and only a few in front, so the hit is less confusing.
+
+**Done:**
+- **Gremlin bits.** Each of the 18 parts was thrown sideways at random, towards the camera as often as away from it, so half the bits crossed in front of the robot. The camera sits on one side of the strips, so the sideways throw now leans away from it: most bits go behind him and a few still come forward. Script: `art/clarity/make_bits1.py`.
+- **The review.** Read the last splash patch line by line: a click, key or W/S during the splash sets the menu timer and returns, so the same press can't pick an item. All 281 picture links in this log point at files that exist.
+- **This log.** Day 3 had no heading, one entry sat below the cutting room floor, and a blank line had split the cutting-room table in two. Fixed, with a jump list and a short table at the top.
+
+**Checked:** the gremlin patch applied, compiled clean and reads back with all 18 throws changed. **Not seen in play yet**, and the splash fix is still unplayed; both are for my first minute in the new build.
+
+---
+
+<a id="cut"></a>
 
 ## Cutting room floor
 Ideas considered and dropped, with the reason.
@@ -1867,7 +1976,6 @@ Ideas considered and dropped, with the reason.
 | 2026-11-13 | Redrawing the jar robot in 2D from the Blender robot | Too much time for now; maybe real part meshes in the jar later |
 | 2026-11-13 | Cigarette and ashtray props from the UI concept | Shane: keep the smoky room, never show a cigarette |
 | 2026-11-13 | Floating keepsake pickups | Replaced by part cards, so each part comes from its own life and the Booth is the only Fast Forward refill |
-
 | 2026-11-13 | Clap a part card free | Hammering the clap already clears gremlins, so it asked nothing new of the player; cards now develop while you stay, and a clap tears them |
 | 2026-11-13 | A UMG widget that paints the card-to-jar thread (OnPaint) | Overriding paint from the Blueprint DSL was risky; 14 small dot images moved every frame do the same job |
 | 2026-11-13 | "HE MADE A PIECE OF ME HERE." as the big intertitle | Too long for the title font; it's the subtitle under A MEMORY |
@@ -1911,15 +2019,8 @@ Ideas considered and dropped, with the reason.
 | 2026-11-15 | The generated REEL LIVES logo | Wonky letters and a white patch that never masked out; I drew my own |
 | 2026-11-15 | The five Suno honky-tonk tracks | Made on a free plan: Suno's terms allow non-commercial use only. Two OpenMusic tracks play instead |
 | 2026-11-15 | "A MEMORY OF HIS HEART · THE MUSIC BOX SLOWS IT ALL" as the piece line | Too long: it ran into the status plate. "HIS HEART · THE MUSIC BOX SLOWS IT ALL" |
+| 2026-11-15 | His hands, his eyes, his heart as the three strips | Read as the robot taking its maker apart; the strips are his old reels now, and the pieces are things he left in them |
 | 2026-11-15 | Three strips as three lives with no meaning beyond their speed | Haphazard: each strip is now a part of the Maker (hands, eyes, heart) |
+| 2026-11-15 | Gremlin bits bursting evenly in every direction | Half of them crossed in front of the robot and hid the hit; most now fly behind him |
+
 Candidate features still waiting for a decision (from the brief): treadmill drift, player-called CUT!, music per life, cue marks, tape splice.
-
-### 16:50 - TODO pass (Hermes)
-Asked: work through docs/TODO.md, tick as I go, no package. Done, all five ticked, none packaged:
-- Window title: DefaultGame.ini now says Reel Lives (shows in the next package).
-- Slow reel music pitch 0.95 to 0.90.
-- Title robot: amber glow out, black drop shadow in.
-- First-time prompts: hop at the start, whack with the first gremlin after 7 s, boost when the film first fills; pad wording if the last play key came from a pad. Seen in PIE: hop and whack.
-- Top-left HUD: TAKES / ENERGY / CRADLES are one plate with drawn lamps and cradles instead of text glyphs. Not looked at on screen yet.
-Setback: this session could not grab the editor window (winshot found no window handle), so no screenshots; Shane to eyeball the title robot and the new HUD block.
-
