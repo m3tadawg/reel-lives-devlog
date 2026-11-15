@@ -4,6 +4,8 @@ Solo developer directing AI agents. Theme: Director's Cut.
 This log records what I asked the agents to do, what they did, what made the cut and what didn't.
 Times are South Africa time (UTC+2). Screenshots are in `devlog-shots/`.
 
+**Styled version of this log, with the pictures:** https://m3tadawg.github.io/reel-lives-devlog/
+
 **Jump to:** [Pre-jam](#prejam) · [Day 1, 12 Nov](#day1) · [Day 2, 13 Nov](#day2) · [Day 3, 14 Nov](#day3) · [Day 4, 15 Nov](#day4) · [Cutting room floor](#cut)
 
 | | |
@@ -11,7 +13,6 @@ Times are South Africa time (UTC+2). Screenshots are in `devlog-shots/`.
 | **Game** | Reel Lives, a runner across three strips of film. [Play it on itch.io](https://mindseed.itch.io/reel-lives) |
 | **Made by** | One person (Shane Storms, mindseed) directing Claude agents in Unreal Engine 5.9, Blueprint only |
 | **How to read an entry** | **Asked** is what I told the agents. **Done** is what they built. **Checked** is how it was tested. **Setbacks** are what went wrong |
-| **In this log** | 138 timed entries, 273 screenshots, 83 ideas on the cutting room floor |
 
 ---
 
