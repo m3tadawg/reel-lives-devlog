@@ -1949,6 +1949,15 @@ I found the title menu still live under the opening splash. This evening's first
 
 ---
 
+### 23:00 to 23:15: A dev log that looks like the game
+**Asked:** the public log was an eyesore: a plain GitHub page. Give it a style. Then take the "4 days, 138 entries" tiles off it (a tired thing), publish it, and make the itch page look as close to it as possible.
+
+**Done:** the log is now also a page in the game's own colours and fonts: the logo on a dark theatre background, a film-strip banner for each day, every entry a card with its time, coloured labels for Asked, Done, Checked and Setback, pictures that enlarge on a click, and the cutting room floor with every dropped idea struck through. It is built from this file by `scratch/devlog_page.py` and published with GitHub Pages. The itch page has the same colours, saved through its theme editor.
+
+**Cut:** the stat tiles. **Not done:** the itch fonts and banner, the build upload and making the page public. My usage limit ran low, so the rest goes to an Opus session with a written hand-off (`docs/NEXT-SESSION-PROMPT-FINAL.md`).
+
+---
+
 <a id="cut"></a>
 
 ## Cutting room floor
@@ -2039,5 +2048,6 @@ Ideas considered and dropped, with the reason.
 | 2026-11-15 | His hands, his eyes, his heart as the three strips | Read as the robot taking its maker apart; the strips are his old reels now, and the pieces are things he left in them |
 | 2026-11-15 | Three strips as three lives with no meaning beyond their speed | Haphazard: each strip is now a part of the Maker (hands, eyes, heart) |
 | 2026-11-15 | Gremlin bits bursting evenly in every direction | Half of them crossed in front of the robot and hid the hit; most now fly behind him |
+| 2026-11-15 | Stat tiles on the dev log page (4 days, 138 entries) | A tired device; the log speaks for itself |
 
 Candidate features still waiting for a decision (from the brief): treadmill drift, player-called CUT!, music per life, cue marks, tape splice.
