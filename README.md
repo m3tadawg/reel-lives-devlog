@@ -1,18 +1,47 @@
 # Reel Lives: dev log (Epic AI MegaJam 2026)
 
-Solo developer directing AI agents. Theme: Director's Cut.
-This log records what I asked the agents to do, what they did, what made the cut and what didn't.
-Times are South Africa time (UTC+2). Screenshots are in `devlog-shots/`.
+Solo entry. Theme: Director's Cut.
+The idea, the characters, the look, the story and every call on what made the cut are mine. Claude agents did the production work inside Unreal Engine and Blender, to my designs and my notes after each play. This log records my direction, what the agents built from it, what made the cut and what didn't.
+A lot of my own work (drawing the robot, designing the gremlin, the logo, the voices, the music, the videos, every play-through) happened away from the agent sessions, so the day-by-day entries only mention it where it came back into the project. **[Who made what](#credits)** pulls it together.
+Times are South Africa time (UTC+2). Screenshots are in `devlog-shots/`. Revised 2026-11-16, after the deadline, to give my design and art work the credit it was missing.
 
 **Styled version of this log, with the pictures:** https://m3tadawg.github.io/reel-lives-devlog/
 
-**Jump to:** [Pre-jam](#prejam) · [Day 1, 12 Nov](#day1) · [Day 2, 13 Nov](#day2) · [Day 3, 14 Nov](#day3) · [Day 4, 15 Nov](#day4) · [Cutting room floor](#cut)
+**Jump to:** [Who made what](#credits) · [Pre-jam](#prejam) · [Day 1, 12 Nov](#day1) · [Day 2, 13 Nov](#day2) · [Day 3, 14 Nov](#day3) · [Day 4, 15 Nov](#day4) · [Cutting room floor](#cut)
 
 | | |
 |---|---|
 | **Game** | Reel Lives, a runner across three strips of film. [Play it on itch.io](https://mindseed.itch.io/reel-lives) |
-| **Made by** | One person (Shane Storms, mindseed) directing Claude agents in Unreal Engine 5.9, Blueprint only |
-| **How to read an entry** | **Asked** is what I told the agents. **Done** is what they built. **Checked** is how it was tested. **Setbacks** are what went wrong |
+| **Made by** | Shane Storms (mindseed): idea, design, art, sound, direction and testing. Built in Unreal Engine 5.9, Blueprint only, with Claude agents doing the production work |
+| **How to read an entry** | **My direction** is my design, my notes from playing and my decisions for that step. **Done** is what the agents built from it. **Checked** is how it was tested. **Setbacks** are what went wrong |
+
+---
+
+<a id="credits"></a>
+
+## Who made what
+
+### The design is mine
+- **The idea.** Reel Lives is my idea: a runner across parallel film strips, each strip a different life of the same person, with choices that branch like a multiverse; a clapperboard as the weapon; gremlins that wreck the reels; and the Cut chewing the film from behind. The layout is mine too: horizontal strips stacked top to bottom, film running right to left, the runner facing right. I worked it through with Claude on 2026-11-11 and it wrote my decisions up as `DESIGN-BRIEF.md`.
+- **The robot.** I designed him: a wind-up robot with a clapperboard for a head, the clapper as his jaw, a spring neck, a key in his back, jointed limbs and big flat shoes. I drew him myself in Affinity (`docs/Robot.af`) and worked with image generators on fal to push the character, then chose the brass ball-bodied redesign with the red bulb and the chalk eyes. Every 3D model of him was built to those pictures. ![My first sketch of the robot, in Affinity](devlog-shots/2026-11-12_1515_shane-robot-sketch.png) ![My robot design render, the one the final robot was modelled to](devlog-shots/2026-11-14_2352_shane-robot-v2-design.jpg)
+- **The gremlins.** Gremlins that wreck film come from my memory of the Rhodesian Broadcasting Corporation's technical-fault card, a little drawing of gremlins messing up the reels. The gremlin in the game is my own character sheet and parts sheet (red fedora, bat ears, a huge grin, a waistcoat, two-tone shoes), turned into a 3D model with an image-to-3D tool I ran myself. The scripted gremlins before it were stand-ins. ![My gremlin, cut into parts](devlog-shots/2026-11-14_1830_shane-gremlin-parts-sheet.jpg)
+- **The look.** I took the concept prompt to the image generators myself and made the two concept renders that set the target look. I chose the HUD (UI variation 4) and the pop-up card direction, and overruled the idea of the slate as the HUD. ![My first concept render](devlog-shots/2026-11-12_0937_shane-concept-render-1.jpg)
+- **The story.** I set the premise and made the call at every story decision: the Maker and his three lives, the friend and the foe, and the final reels story (an old projector, one reel stuck on fast and one on slow, and the things the Maker left behind).
+- **The logo and the itch art.** I drew the REEL LIVES logo in Affinity to replace a generated one with wonky lettering, and made the itch thumbnail in Affinity too (`docs/itch/`).
+
+### Sound, music and video
+- **Gremlin voices.** My own voice, on two phone recordings, cut, cleaned and levelled into fifteen clips.
+- **Projector loop.** I made the projector film loop myself with an audio model on fal.
+- **Music.** I made the tracks: five on Suno, then two on OpenMusic when Suno's free-plan terms ruled the first set out.
+- **Videos.** The gameplay video on YouTube and itch is mine (`video/`), and so is the upload of the build.
+
+### How the game was directed
+- **Playing it.** I played every build. My notes after each play (the entries headed "My ... play", "Shane's play notes" and "My notes") drove nearly every step after the first grey box, and I sent a test build to my brother.
+- **Calls.** Every Director's call is mine, including the ones that overruled a suggestion: the slate as the HUD, the bite rule, the chalk robot in the jar.
+- **Budget and cuts.** I set the fal budget (about $30 that cannot be refilled), approved each paid generation and chose what to cut (see the cutting room floor).
+
+### What the agents built
+Claude (Fable as the lead, Opus and Sonnet as workers, and headless workers on the jam's API credit) built what the entries below describe, to the designs and notes above: the Blueprint game logic through the Unreal MCP, the Blender models by script (the robot, the gremlin parts, the Cut machine, the cards and keepsakes), the materials, HUD and menus, the sound effects on fal, the checks, and the upkeep of this log. Every generated asset is listed with its model, cost and licence in `docs/AI-ASSETS.md`.
 
 ---
 
@@ -22,8 +51,9 @@ Times are South Africa time (UTC+2). Screenshots are in `devlog-shots/`.
 
 ### 2026-11-11: Concept
 - Theme revealed: "Director's Cut".
-- Brainstormed with Claude and agreed on **Reel Lives**: an isometric runner across parallel film strips, each one a different life of the same person. Gremlins wreck the reels, a clapperboard knocks them off, and the Cut chews up the film from behind.
-- Wrote `DESIGN-BRIEF.md`. No code, assets or levels. Declared as pre-jam material.
+- **The idea is mine:** **Reel Lives**, an isometric runner across parallel film strips, each one a different life of the same person, with the choices branching like a multiverse. A clapperboard knocks the gremlins off the reels, and the Cut chews up the film from behind. The layout is mine too: horizontal strips stacked top to bottom, film running right to left, the runner facing right.
+- **The gremlins are mine as well:** I remembered the Rhodesian Broadcasting Corporation's technical-fault card, a little drawing of gremlins messing up the reels, and wanted creatures built from the things that ruin film.
+- I talked it through with Claude, which pushed on it and wrote my decisions up as `DESIGN-BRIEF.md`. No code, assets or levels. Declared as pre-jam material.
 - Tried an agent-driven overnight download of UE 5.9 Preview with a scheduled task. It got too fiddly, so I cancelled it and started the download by hand.
 
 ---
@@ -62,6 +92,7 @@ Times are South Africa time (UTC+2). Screenshots are in `devlog-shots/`.
 - Claude wrote `docs/CONCEPT-PROMPT.md`: a master in-game screenshot prompt with the full HUD, a negative prompt, five short variant prompts (title screen, the Cut, gremlin sheet, hero sheet, end montage), and a juice table that gives every action visual, audio and excitement feedback.
 - Biggest new idea: an unseen **live accompanist** (ragtime piano and organ that react to play), a **cinema audience** (gasps, laughs, applause) and a **megaphone director** ("ACTION!" / "CUT!" / "THAT'S A WRAP!"). Hops are jump cuts. Combos are counted as "Takes".
 - Rule: juice goes in from the grey box and is part of the kill test.
+- I took that prompt to the image generators myself and made the first concept renders (09:37 and 09:59). They set the look the whole game was built toward; they are in the 12:38 entry.
 
 ### 12:06: Jam API credits wired up for delegated workers
 - Anthropic's jam API credits (first tranche $25) landed on the Claude Console org for my normal account. Asked whether a second, credit-billed Claude could take on side work like modelling.
@@ -75,11 +106,12 @@ Times are South Africa time (UTC+2). Screenshots are in `devlog-shots/`.
 - Plan unchanged: generate shapes in Tripo, discard its textures, apply our house material in Blender, then import to Unreal.
 
 ### 12:38: Concept review: renders, Rive and a robot hero (no build work)
-- I generated two concept renders from Claude's prompt and liked the feel: [Sample-screen.png](Sample-screen.png) (pop-up cards on the strips) and [sample-screen_GPT.png](sample-screen_GPT.png) (scenes painted inside the frames). Asked Claude how close the build can get, whether Rive can do the UI, and whether a small clockwork robot should replace the human runner.
+- **My concept renders:** I generated these two from the prompt and liked the feel: [Sample-screen.png](Sample-screen.png) (pop-up cards on the strips) and [sample-screen_GPT.png](sample-screen_GPT.png) (scenes painted inside the frames). ![My first concept render: pop-up cards on the strips](devlog-shots/2026-11-12_0937_shane-concept-render-1.jpg) ![My second concept render: scenes painted inside the frames](devlog-shots/2026-11-12_0959_shane-concept-render-2.jpg)
+- I asked Claude how close the build can get, whether Rive can do the UI, and whether my small clockwork robot should replace the human runner.
 - **How close:** Claude's estimate is HUD about 90%, strips and cards about 85%, the Cut and reels about 70%, the hero about 60% as a human. The first render is the target because it is built from flat cards, one beam and a 2D HUD, which are all cheap in Unreal. The second render is prettier but harder to read at speed.
 - **New rule proposed:** art printed flat in a frame is flavour; anything that stands up is gameplay.
 - **Rive:** the Unreal plugin lists UE 5.6 to 5.8 (release 0.4.26), with no mention of 5.9 Preview. It is a C++ plugin and we cannot compile one (MSVC ban). Proposal: do not depend on it. Build the HUD in UMG. Rive stays possible as a design tool only if it exports image sequences.
-- **Robot hero:** Claude backs it. Rigid parts need no skinning and can be animated in Blueprint (spinning key, bobbing body, snapping clapper). Proposed design: a wind-up robot whose head is the clapperboard. Proposed story: the reels are the possible lives of the robot's maker, and he builds the robot in only one of them, so the final cut can erase the player.
+- **Robot hero:** the robot is my idea and my design (a wind-up robot with a clapperboard for a head; I draw him properly in the 14:45 entry). I asked whether he could replace the human runner. Claude backed it and answered with how to build him: rigid parts need no skinning and can be animated in Blueprint (spinning key, bobbing body, snapping clapper). It also offered a story to go with him: the reels are the possible lives of the robot's maker, and he builds the robot in only one of them, so the final cut can erase the player.
 - Written into `DESIGN-BRIEF.md` as a proposal. **Waiting on my call.**
 
 ### 12:42: Director's call: the robot is the hero
@@ -127,6 +159,13 @@ Times are South Africa time (UTC+2). Screenshots are in `devlog-shots/`.
 - I played `L_GreyBox`. **The hop feels good.** The kill test in the brief was due by the end of day 2, so the core is safe and features can go on top.
 - Next call: placeholder sounds first, because sound is the biggest piece of juice still missing.
 
+### 14:45 to 16:30: I design the robot (my own work, away from the agents)
+This part of the day happened outside any agent session, so nothing about it was logged at the time. It is rebuilt here from my files and my fal history, with the file times.
+- **Head-shape study (about 14:45).** The clapperboard head worked out as flat shapes: the slate, an eye, the clapper hanging below it as a jaw and the first ovals of the spring neck. I also pulled a photo of a real clapperboard as the reference. ![My head-shape study](devlog-shots/2026-11-12_1445_shane-head-shape-study.png)
+- **The robot, drawn in Affinity (about 15:15 to 15:40, `docs/Robot.af`).** Clapperboard head with one eye and the clapper as the jaw; a neck of stacked ovals that reads as a spring; a dome on a capsule body; a wind-up key on the back; arms and legs with joint knuckles; big flat shoes. Every later robot, in 3D and in the game, follows this drawing. ![My robot sketch](devlog-shots/2026-11-12_1515_shane-robot-sketch.png)
+- **Pushing the character on fal (my own requests).** I fed my grey silhouette diagram of the head and neck to GPT Image, then asked for a redesign with more character and a real clapperboard head with drawn-on eyes. The requests are in `docs/AI-ASSETS.md` (12:52 to 14:34). The one that was "almost there" is saved from about 16:26. ![The generated robot that was almost there](devlog-shots/2026-11-12_1626_shane-robot-almost-there.jpg)
+- **What I took from it:** the drawing and the references went to Claude at 16:42 as the brief for the Blender robot. Claude's part was modelling and rigging to them; the character is mine.
+
 ### 16:32: Fast Forward burst, pickups, and a first (rejected) sound pass
 - While Claude was adding sounds, I asked for a burst: a pickup or a one-use ability that boosts the player forward.
 - **Fast Forward (kept):** press Shift or E. For 0.6 s the film runs up to 3.5 times faster, the robot lunges and stretches, the camera pulls back, and the Cut falls back about 420 units. The robot is safe during the burst and bowls over any gremlin on its strip, which counts as Takes. You start a run with one charge and hold one at most.
@@ -140,7 +179,7 @@ Times are South Africa time (UTC+2). Screenshots are in `devlog-shots/`.
 
 ### 16:42: Character direction, the slate as HUD, and a plan to split work across models
 - I played the build again: the game and the feel are really good already.
-- I gave Claude three references (saved in `docs/character-refs/`): [my rough sketch](character-refs/robot-shane-rough-sketch.png), [a generated image that is almost there](character-refs/robot-generated-almost-there.webp) and [a real clapperboard](character-refs/real-clapperboard-reference.jpg). My notes: much cuter; the head must read as a real clapperboard; a friendly, cute tyrannosaur more than a duck, but neither.
+- I gave Claude my design as three references (saved in `docs/character-refs/`): [my own sketch](character-refs/robot-shane-rough-sketch.png), [the generated image that is almost there](character-refs/robot-generated-almost-there.webp) and [a real clapperboard](character-refs/real-clapperboard-reference.jpg). My notes: much cuter; the head must read as a real clapperboard; a friendly, cute tyrannosaur more than a duck, but neither.
 - **My idea:** draw the character's expressions on the clapperboard, and put lives and other details there too, so the game needs almost no UI.
 - **Claude's answer:** this is the cheap route, not the hard one. The slate is flat, so a face is one texture with eight chalk expressions and a material value that picks one. Lives become chalk tally marks, the combo goes in the TAKE box. One warning: the robot is small on screen, so numbers on its head will not be readable. Fix: draw the same slate large in a screen corner as a close-up of its head.
 - **Kept:** chalk face on the slate, slate as HUD, the clapperboard turned over so the hinged stick is the jaw. **Cut:** the glass lens eye, and most of the brass HUD objects (footage counter, film cans, gauge) unless the slate cannot carry them.
@@ -160,7 +199,7 @@ Times are South Africa time (UTC+2). Screenshots are in `devlog-shots/`.
 - **Attempt 2, failed:** compile passed, but the cook tried to cook a MetaHuman engine asset and failed. Fix: cook only our map, and never cook the MetaHuman folders.
 - **Attempts 3 and 4, failed:** a "never cook these folders" rule for MetaHuman crashed the cook (the folder counted as two things at once), and without it the MetaHuman asset was cooked again. Fix: the game uses no MetaHuman, so those plugins are switched off in the project file.
 - **Attempt 5 (17:10), works:** the packaged game opens `L_GreyBox`, the strips scroll, gremlins come, and the Cut rules fire ([shot](devlog-shots/2026-11-12_1710_packaged-test1-running.png)). First launch shows a black window for about 30 seconds while shaders compile. The build is 985 MB, mostly a Development debug file; the final build will be Shipping without it. Not checked: playing it with the keyboard.
-- **Robot v1 in Blender (Opus, by script, so it can be rebuilt):** 12 rigid parts with pivots at their joints: body, neck spring, slate (head, with the fixed stick), hinge plate, jaw stick, wind-up key, two arms, two legs, two boots. 1.10 m tall (110 Unreal units), faces +X, origin at the feet; the head is 43 percent of the height. The slate carries a chalk texture: ruled lines, SCENE / TAKE / ROLL boxes and a chalk eye, readable from both sides.
+- **Robot v1 in Blender (Opus, by script, so it can be rebuilt), modelled to my sketch:** 12 rigid parts with pivots at their joints, the same parts as in my drawing: body, neck spring, slate (head, with the fixed stick), hinge plate, jaw stick, wind-up key, two arms, two legs, two boots. 1.10 m tall (110 Unreal units), faces +X, origin at the feet; the head is 43 percent of the height. The slate carries a chalk texture: ruled lines, SCENE / TAKE / ROLL boxes and a chalk eye, readable from both sides.
 - **First render was wrong, and fixed:** the head sat straight up on the body like a television on a stick, the text read backwards on one side, and the stripes were too dense. Fix: the neck now leans forward and the head is carried in front of the body (the tyrannosaur read), the slate is deeper, each side has its own mirror-correct half of the texture, and there are fewer, bigger stripes.
 - Renders for my approval: [side](devlog-shots/2026-11-12_1700_robot-v1-side.png), [front](devlog-shots/2026-11-12_1700_robot-v1-front.png), [three-quarter](devlog-shots/2026-11-12_1700_robot-v1-threequarter.png). Files: `art/robot/build_robot.py`, `make_textures.py`, `render_robot.py`, `robot.blend`.
 - **Waiting on my call** before it goes into Unreal.
@@ -229,7 +268,7 @@ Times are South Africa time (UTC+2). Screenshots are in `devlog-shots/`.
 
 ### 18:04: Gremlin: first fal spend, four drafts
 - I approved about $0.11 for the gremlin: four cheap drafts, one clean image, one image-to-3D model.
-- Four Flux schnell drafts (~$0.012): [sheet](devlog-shots/2026-11-12_1804_gremlin-drafts.png). Claude's catch: all four put the moth wings where ears go, which drifts toward the 1984 film's creatures the brief says to stay clear of. I picked draft 3 with Claude's changes: no ears, moth wings on its back, eyes like two glowing sprocket holes.
+- Four Flux schnell drafts (~$0.012): [sheet](devlog-shots/2026-11-12_1804_gremlin-drafts.png). Claude's catch: all four put the moth wings where ears go, which drifts toward the 1984 film's creatures the brief says to stay clear of. I picked draft 3 with Claude's changes: no ears, moth wings on its back, eyes like two glowing sprocket holes. (This was a first stand-in built from my RBC fault-card idea; the gremlin I designed myself arrives on Day 3.)
 - (Work stopped here for about three and a half hours: I hit my usage limit.)
 
 ### 21:41: Gremlin in the game: image, 3D model, wobble and knock-off
@@ -273,7 +312,7 @@ Times are South Africa time (UTC+2). Screenshots are in `devlog-shots/`.
 - **Gremlin size:** from the side the 125 cm gremlin is as bulky as the robot's whole body under its head, and from the game camera they read the same size as the robot ([game camera](devlog-shots/2026-11-12_2216_hoptuck-game.png)). Claude proposes 110 cm: still bigger than the 100 cm I called too small, but clearly smaller than the hero. Not changed until I say.
 
 ### 22:24: The Cut is a machine now
-- **Asked:** a brass and iron guillotine splicer with teeth, sparks and film shreds in place of the red wall, strong silhouette first, same position and rule.
+- **My direction:** a brass and iron guillotine splicer with teeth, sparks and film shreds in place of the red wall, strong silhouette first, same position and rule.
 - **Blender by script** (`art/cut/build_cut.py`, free): an iron gantry with brass face plates and rivets, a raked brass crown on the beam so it reads as a press and not a wall, two piston housings, a toothed iron anvil at film level (the bottom jaw), and a separate blade: a slanted steel plate with saw teeth along its edge, a brass rim, piston rods and a "CUT" plate. Two brass gears sit on the camera side. About 4,000 triangles in four meshes (frame, blade, gear, film shred).
 - **Unreal:** `BP_CutMachine`, materials made from the robot's own `M_RobotPart` (`MI_Cut_Iron/Brass/Steel/Hot/Shred/Spark`), so the machine and the robot are the same metal. `BP_Director` spawns it and moves it with `CutDist` exactly as it moved the wall; the wall is hidden but still there.
 - **Juice:** the blade chomps like a heavy machine: a slow rise with a little extra lift before it drops (anticipation), a hard slam, a small bounce. It bites 0.45 times a second when the Cut is far and twice a second when it is on you. The gears wind up as the blade rises and spin back on the slam, the frame jolts, the saw teeth glow hotter as the Cut closes in and flare on every bite, an orange light flashes in the jaw, sparks spray out, and the camera shakes harder the closer it is. Film shreds fly out of the jaw all the time, more and bigger when it is close. Any gremlin that reaches the blade is flung off.
@@ -283,7 +322,7 @@ Times are South Africa time (UTC+2). Screenshots are in `devlog-shots/`.
 - **Not checked:** how the chomp feels at full speed (the editor slows down behind other windows). The near post and its gears cover the far left of the Home strip; that is film that has already been cut, so it should not matter, but I should look.
 
 ### 22:30: Projector beam and the void
-- **Asked:** one spot light from behind the camera, a fog cone, dust motes, near-black surroundings, strips still readable.
+- **My direction:** one spot light from behind the camera, a fog cone, dust motes, near-black surroundings, strips still readable.
 - **Built** (`art/stage/ue_beam.py`, re-runnable): a warm tungsten spot light (`ProjectorBeam`), volumetric fog (`ProjectorHaze`), the old directional light cut to a faint cool fill, and a post-process volume with vignette, a little film grain and bloom. Dust: `BP_DustMotes`, 48 glowing specks that rise slowly, sway and twinkle (`art/stage/bp_dust.dsl`).
 - **It took five tries to place the light:**
   - [v1](devlog-shots/2026-11-12_2226_beam-v2-wide.png) from behind the camera: from outside it is a beautiful projector beam. But the game camera sits inside the cone, so the whole game view was brown haze ([game view](devlog-shots/2026-11-12_2226_beam-v2-game.png)) and the stocks washed out to one cream.
@@ -294,14 +333,14 @@ Times are South Africa time (UTC+2). Screenshots are in `devlog-shots/`.
 - **Not done:** supply spools on the right (next if time allows). The Studio stock now reads nearly white under the beam; the stocks may need re-balancing for the new light.
 
 ### 22:35: The robot takes the stock of the strip it stands on
-- **Asked:** a quick job: tint the robot's materials to the stock of its strip, blended over the hop.
+- **My direction:** a quick job: tint the robot's materials to the stock of its strip, blended over the hop.
 - **How:** rather than give each of the robot's 30-odd material slots its own copy, the robot's two master materials now read one shared colour (`MPC_Game.RobotTint`) and a desaturation amount (`RobotDesat`). A `StripTint` switch is on for the robot's own instances only, so the Cut machine, the keepsakes and the dust (which share the material) keep their colours. `BP_Robot` mixes the three stocks by how far it is across the lanes, so the colour changes smoothly through the hop. Script: `art/robot/ue_strip_tint.py`.
 - Studio: silver, mostly desaturated and cool. Booth: warm sepia. Home: a faded, slightly green colour. [The four states: Studio, Booth, mid-hop, Home](devlog-shots/2026-11-12_2234_robot-tint-per-strip.png).
 - **Setback:** the first version turned the robot and the Cut machine into Unreal's grey checker. The shared colour has four channels and the robot's tint three, so the material failed to compile; a mask fixed it.
 - **Not checked:** whether the Home tint is strong enough to read at play size; it is the subtlest of the three.
 
 ### 22:38: Burn frame and grease-pencil X (looks only)
-- **Asked:** how a burn and a grease-pencil X look on a frame, placed by hand or on a test key, to see if they read at speed. No rules yet.
+- **My direction:** how a burn and a grease-pencil X look on a frame, placed by hand or on a test key, to see if they read at speed. No rules yet.
 - **Built:** two shaders written as HLSL in a single Custom node each (`art/frames/ue_make_marks.py`) and `BP_FrameMark`, a flat overlay attached to one film frame, so it rides and wraps with the strip. **Test keys:** `1` lays a burn and `2` a grease-pencil X on the frame about four frames ahead on the robot's strip (`BP_Robot.SpawnMark`).
 - **Burn (`M_Burn`):** the frame catches with a little pop, then a ragged hole spreads fast and slows over five seconds. Its edge bubbles, a glowing ember line rims the hole, a scorched ring fades out into the picture, and an orange light flickers on it. The hole is painted black rather than cut out, which reads as the void because the void is black. [Close](devlog-shots/2026-11-12_2237_marks-burn-close.png), [from the game camera](devlog-shots/2026-11-12_2237_marks-1s.png).
 - **X (`M_GreaseX`):** two quick strokes of red wax pencil (0.45 s each) draw themselves on, with a little punch as each stroke lands, then the X pulses and casts a red glow as a warning. The first version was thin and broken up ([v1, at play size](devlog-shots/2026-11-12_2237_marks-2s.png)); the strokes are now about 60% wider and less patchy ([drawing itself, close](devlog-shots/2026-11-12_2237_marks-x-stroke2.png), [v2 in game](devlog-shots/2026-11-12_2237_marks-v2-game.png)).
@@ -309,7 +348,7 @@ Times are South Africa time (UTC+2). Screenshots are in `devlog-shots/`.
 - **Not judged:** the pencil squeak and strip shake from the juice table wait for sound and the X's rules.
 
 ### 22:40: Mainspring collect pop
-- **Asked:** a quick pop or flash when the mainspring is picked up (the Director destroyed it at once).
+- **My direction:** a quick pop or flash when the mainspring is picked up (the Director destroyed it at once).
 - **Done:** the Director now calls `Collect` on the pickup instead of destroying it, and nudges the camera shake. In 0.4 s the spring punches up to 1.8 times its size, spins fast like a spring letting go, rises, flashes its glow and a warm light, then shrinks away and removes itself. It stops riding the strip while it pops, so it stays by the robot. [Five frames at 10% speed](devlog-shots/2026-11-12_2239_mainspring-collect-pop.png).
 - **Setback, small:** my first slow-motion capture ran before the spring had reached the robot, so it showed nothing; a longer wait caught it.
 - The ticket stub punching into the HUD (from the juice table) waits for the HUD.
@@ -320,7 +359,7 @@ Times are South Africa time (UTC+2). Screenshots are in `devlog-shots/`.
 - **Honest result:** from the game camera they are not seen at all ([game view](devlog-shots/2026-11-12_2241_spools-game.png)). They sit just past the right edge and outside the beam. Pulling them into view would hide the frames coming in, which the player needs to read ahead. Kept for the title, the opening and closing shots down the beam, and the trailer.
 
 ### 22:44: A faint picture in every frame; CHECKPOINT 2
-- **Asked:** something faint in the picture area per life, so a frame reads as a frame of film and not a blank card. Cheap; the pop-up cards proper come later.
+- **My direction:** something faint in the picture area per life, so a frame reads as a frame of film and not a blank card. Cheap; the pop-up cards proper come later.
 - **Sonnet subagent (free, PIL):** an atlas of 12 bold silhouettes, 4 per life (`art/film/make_frame_pictures.py`, `T_FramePictures`). Booth: a projector, a rack of film cans, a workbench with the little clapperboard robot on it, a ticket booth. Studio: a movie camera, a director's chair and megaphone, a premiere marquee with crossing searchlights, a stage spotlight. Home: a house with a porch and tree, a kitchen table under a lamp, a cradle with a mobile, a garden gate. [The atlas](../art/film/textures/T_FramePictures_preview.png). Checked by Claude before use.
 - **Material (Claude):** `M_Film` darkens the picture where the atlas has ink (40%). Each stock picks its own row (`LifeRow`), and each frame picks one of four pictures from the per-frame seed it already had for exposure flicker. [Close](devlog-shots/2026-11-12_2243_frames-pictures-close.png), [from the game camera](devlog-shots/2026-11-12_2243_frames-pictures-game.png): the strips read as three different lives now, and the robot and gremlins still stand out.
 - **Known:** the pictures are drawn as tall cells and stretched into wide frames, so they look a little squat. Easy to redraw if it bothers me.
@@ -448,7 +487,7 @@ Times are South Africa time (UTC+2). Screenshots are in `devlog-shots/`.
 
 ### 08:35: Quick motion and juice pass (about 25 minutes)
 
-**Asked:** Shane: the robot's motion is not enjoyable, the head does not snap forward enough on the attack, the gremlins do not move convincingly and read as blurs; polish motion, ambience and UI as fast as possible.
+**My direction:** Shane: the robot's motion is not enjoyable, the head does not snap forward enough on the attack, the gremlins do not move convincingly and read as blurs; polish motion, ambience and UI as fast as possible.
 
 **Done:**
 - **Robot attack:** a wind-up (head and body pull back, arms come forward) and then a fast lunge: body leans and steps forward, the head shoots out on the neck spring, arms sweep back, and the camera pushes in a little. The head now travels about a full film frame ahead of the body. Code: `art/robot/bp_robot_full.dsl`.
@@ -464,7 +503,7 @@ Times are South Africa time (UTC+2). Screenshots are in `devlog-shots/`.
 
 ### 10:12: Setback: the real viewport never looked like our screenshots
 
-**Asked:** Shane played it and said it looked nothing like last night: frame pictures gone, gremlins washed out, only one strip.
+**My direction:** Shane played it and said it looked nothing like last night: frame pictures gone, gremlins washed out, only one strip.
 
 **Found:** every screenshot since the visual pass came from an offscreen capture, which uses a fixed exposure. The real play window uses auto exposure. With one thin strip in a black void (the new childhood opening) it brightened the picture until the strip burnt out to white. Nobody had looked at the real window, so the overnight "verified" stills were wrong about the look. [Before, real window](devlog-shots/2026-11-13_1006_viewport-exposure-before.png).
 
@@ -474,7 +513,7 @@ Times are South Africa time (UTC+2). Screenshots are in `devlog-shots/`.
 
 ### 10:30: Shane's play notes: three strips from the start, text out of the way, slower lunge
 
-**Asked:** Shane played it. It works, but: open with all three strips and fewer gremlins so the player learns to hop at once; the burn on the single strip could not be avoided; the centre text covers the robot; the head lunge is too fast to read. He also said the strips do not differ and the game still feels like it is missing something.
+**My direction:** Shane played it. It works, but: open with all three strips and fewer gremlins so the player learns to hop at once; the burn on the single strip could not be avoided; the centre text covers the robot; the head lunge is too fast to read. He also said the strips do not differ and the game still feels like it is missing something.
 
 **Done:**
 - The reel opens with all three strips. The first burn lands on the robot's own strip with the hint "hop to another strip". Gremlins come at well under half the rate for the first 30 s. Code: `art/director/bp_director_run.dsl`.
@@ -489,7 +528,7 @@ Times are South Africa time (UTC+2). Screenshots are in `devlog-shots/`.
 
 ### 10:50: Each life gets a rule, and footage is the score
 
-**Asked:** Shane agreed to one rule per strip plus a footage score, so that a hop is a choice.
+**My direction:** Shane agreed to one rule per strip plus a footage score, so that a hop is a choice.
 
 **Found first:** the strips already ran at different speeds (Studio 700, Booth 300, Home 480) and the Cut already gained on the slow one. Nothing on screen said so, which is why the lives felt the same. So this step is mostly making the rules count and making them visible.
 
@@ -506,7 +545,7 @@ Times are South Africa time (UTC+2). Screenshots are in `devlog-shots/`.
 
 ### 11:30: Pop-up cards: the three lives now look like three lives
 
-**Asked:** Shane: how should the card art be made? He allowed up to $1 on fal to work out the process, and wants the game closer to the real idea today.
+**My direction:** Shane: how should the card art be made? He allowed up to $1 on fal to work out the process, and wants the game closer to the real idea today.
 
 **Process that worked (first try):**
 1. One fal render per card with the cheapest model (FLUX schnell): "paper cut-out sticker, antique engraving, die-cut border, on chroma green". Each life has its own ink: sepia for the Booth, black and silver for the Studio, faded pastel for the Home.
@@ -535,7 +574,7 @@ Times are South Africa time (UTC+2). Screenshots are in `devlog-shots/`.
 
 ### 13:05: The robot gets its chalk face
 
-**Asked:** Shane: carry on with the next stage. The next unticked must-ship item on the roadmap was the robot's chalk face.
+**My direction:** Shane: carry on with the next stage. The next unticked must-ship item on the roadmap was the robot's chalk face.
 
 **Done:**
 - **Eight expressions in chalk**, drawn by a script (`art/robot/make_faces.py`), not fal, so no cost: idle, blink, happy, hurt, scared, determined, surprised, knocked out. One eye and a brow per frame, since the robot is always seen side-on. [Atlas](devlog-shots/2026-11-13_1245_chalk-face-atlas.png).
@@ -569,7 +608,7 @@ Times are South Africa time (UTC+2). Screenshots are in `devlog-shots/`.
 
 ### 14:30: The cards get a job: clap a part of yourself free
 
-**Asked:** the standing cards made no sense as scenery. Claude offered three jobs: clap a scribbled-out card to free the part it hides, gremlins eating the cards, or collecting a life's set of four. I picked **clap to free**, but I'm not sure yet that the story reads while you're fighting, so I asked for it to be switchable if it doesn't work.
+**My direction:** the standing cards made no sense as scenery. Claude offered three jobs: clap a scribbled-out card to free the part it hides, gremlins eating the cards, or collecting a life's set of four. I picked **clap to free**, but I'm not sure yet that the story reads while you're fighting, so I asked for it to be switchable if it doesn't work.
 
 **First, a fix:** the paused session's tick rewrite had dropped the chalk face's update call. Put back (only the tick was written); the face reacts again. Its edits were committed as a checkpoint first, so this work sits on its own.
 
@@ -598,7 +637,7 @@ Times are South Africa time (UTC+2). Screenshots are in `devlog-shots/`.
 
 ### 15:05: Cards develop while you stay; clapping one tears it
 
-**Asked:** I realised clap-to-free is just "hammer the clap button", since that already clears gremlins. I didn't want another button. Claude offered four ways to collect without the clapper. I took two together: the card **develops** while you stay on its strip, and **clapping a part card tears it** (the part is lost). I like how hitting the cards feels now (the burst, the part popping up), so that stays as the payoff when a card finishes developing. Hitting the cards had no challenge, and the cards were far apart.
+**My direction:** I realised clap-to-free is just "hammer the clap button", since that already clears gremlins. I didn't want another button. Claude offered four ways to collect without the clapper. I took two together: the card **develops** while you stay on its strip, and **clapping a part card tears it** (the part is lost). I like how hitting the cards feels now (the burst, the part popping up), so that stays as the payoff when a card finishes developing. Hitting the cards had no challenge, and the cards were far apart.
 
 **Done:**
 - **Develop (the new default):** a part card develops like a photo while the robot is on its strip and the card is on screen. The scribble fades, the colour comes in, the glow builds and the card shakes harder. Hop away and it fades back. When it's done, you get the same burst, part flight, "THE ... IS YOURS" and power as before.
@@ -615,7 +654,7 @@ Times are South Africa time (UTC+2). Screenshots are in `devlog-shots/`.
 
 ### 16:40: The robot builds itself: parts bolt on, WHOLE, knocked loose, and the wrap knows
 
-**Asked:** I played the cards and they felt great to hit, but something was still missing. Claude's read was that the parts didn't matter: PARTS was a counter nothing used. I asked for the robot to build itself from them, "with as much juice and pizzazz as possible".
+**My direction:** I played the cards and they felt great to hit, but something was still missing. Claude's read was that the parts didn't matter: PARTS was a counter nothing used. I asked for the robot to build itself from them, "with as much juice and pizzazz as possible".
 
 **Done:**
 - **The robot wears its parts.** The lens bolts onto the front of its body, the mainspring onto its hip, and the music-box key stands on top of its head like a wind-up toy. When a part is freed it pops on: it grows in a fast spin to about 1.7 times its size and wobbles down. The robot bounces (its landing squash), the camera kicks, and there's a clack under the pickup sound. The mainspring turns all the time and the key sways. [Two parts on](devlog-shots/2026-11-13_1636_robot-wears-parts.png), [all three, close](devlog-shots/2026-11-13_1636_robot-whole-closeup.png), [all three, wide: key on the head](devlog-shots/2026-11-13_1636_robot-whole-wide.png).
@@ -633,7 +672,7 @@ Times are South Africa time (UTC+2). Screenshots are in `devlog-shots/`.
 
 ### 17:00: Three real sounds for the robot building itself
 
-**Asked:** yes to three fal sounds for the new moments.
+**My direction:** yes to three fal sounds for the new moments.
 
 **Done:** one try each on fal (sonilo text-to-sound-effects), 2 + 2 + 2.5 s, about $0.012 in total:
 - **`S_PartClunk`** (a part bolting on): a brass clunk with ratchet clicks. The raw take had three separate hits; I kept the loudest, 0.4 s. It replaces the reused clack.
@@ -645,7 +684,7 @@ Times are South Africa time (UTC+2). Screenshots are in `devlog-shots/`.
 
 ### 18:00: Workers on the jam API credit while my subscription rested: the projection look and the submission paperwork
 
-**Asked:** I was close to my hourly limit, and the $25 of Anthropic API credit from the jam expires in a few days. How do we use it? Also: keep everything off C:.
+**My direction:** I was close to my hourly limit, and the $25 of Anthropic API credit from the jam expires in a few days. How do we use it? Also: keep everything off C:.
 
 **How:** `setup/delegate.ps1` runs a headless Claude worker billed to the jam credit, not my subscription. Two workers ran side by side: Opus on the Unreal editor, and Sonnet on files only. Their briefs and scratch are on X: (`X:\_agent-scratch\2026-11-13\reel-lives\` and the repo's git-ignored `scratch/`).
 
@@ -666,7 +705,7 @@ Times are South Africa time (UTC+2). Screenshots are in `devlog-shots/`.
 
 ### 18:15: Music box B is the WHOLE sound; my play notes go on the roadmap
 
-**Asked:** I picked music-box take B for THE ROBOT IS WHOLE. I wrote down a few things I saw while playing.
+**My direction:** I picked music-box take B for THE ROBOT IS WHOLE. I wrote down a few things I saw while playing.
 
 **Done:**
 - `audio/S_Whole.wav` is now take B, re-imported into Unreal; no Blueprint change was needed. The first fanfare is kept as `audio/whole-fanfare-v1.wav`.
@@ -697,7 +736,7 @@ Saturday morning: the goblin redesign as rigid parts moved by Blueprint (a real 
 
 ### 18:32: Fewer words, and the robot visibly builds itself
 
-**Asked:** step 1 of tonight's plan: text everywhere was making things harder to read, and you couldn't tell the robot was building itself.
+**My direction:** step 1 of tonight's plan: text everywhere was making things harder to read, and you couldn't tell the robot was building itself.
 
 **Done:**
 - **Words cut.** Every message on screen was read from the live Blueprints and cut to a stamp. A part is now "LENS!" with "PART 2 OF 3" under it (it was "THE LENS IS YOURS / From the Studio. FLASH! Gremlins on your strip knocked off / STILL MISSING: ..."). A knock is "CUT! / KEY KNOCKED LOOSE". The tutorial lines are three words each ("BURNER: CLAP IT"). The card hint is "A PART OF THE ROBOT: STAY ON ITS STRIP". "TORN!" says "DON'T CLAP PARTS". The worst offender was the clap combo: every hit printed "TAKE x7" over whatever else was showing. It's gone until the HUD gets a proper combo stamp. The strip description at the bottom of the screen goes too (strip labels replace it in step 3).
@@ -713,7 +752,7 @@ Saturday morning: the goblin redesign as rigid parts moved by Blueprint (a real 
 
 ### 18:39: One part per act, and every strip gets a job
 
-**Asked:** steps 2 and 3 of tonight's plan: I had all three parts almost at the start; the strips' effects didn't show; the scenes felt empty, just goblin bashing; killing goblins should fill a meter that lets you scoot ahead of the Cut.
+**My direction:** steps 2 and 3 of tonight's plan: I had all three parts almost at the start; the strips' effects didn't show; the scenes felt empty, just goblin bashing; killing goblins should fill a meter that lets you scoot ahead of the Cut.
 
 **Found first:** every card the pickup timer dropped was a part card for its strip, every 9 to 14 s from the start, plus three scripted ones at 20, 48 and 106 s. That's why the parts came so fast.
 
@@ -733,7 +772,7 @@ Saturday morning: the goblin redesign as rigid parts moved by Blueprint (a real 
 
 ### 18:47: A HUD that says where you are, and a burn fall rewinds the take
 
-**Asked:** steps 4 and 5 of tonight's plan: a HUD that shows the robot's parts, progress through the reel, how close the Cut is, and the new burst meter; and falling through a burn should set you back a chunk, not let you carry on from the hole.
+**My direction:** steps 4 and 5 of tonight's plan: a HUD that shows the robot's parts, progress through the reel, how close the Cut is, and the new burst meter; and falling through a burn should set you back a chunk, not let you carry on from the hole.
 
 **Done, the HUD:** all of it drawn by a Python script (`art/hud/make_hud_art.py`, no fal), built into `WBP_RunHUD` by `art/hud/ue_hud_v2.py`, driven from the Director's `HudTick` (`art/clarity/make_clarity3.py`):
 - Top left: **TAKE 2** and three **film cans**, one per take left (spent ones go dark).
@@ -773,7 +812,7 @@ Saturday morning: the goblin redesign as rigid parts moved by Blueprint (a real 
 
 ### 19:33: The robot starts in pieces; pieces fly into the HUD; junk parts; and a bug I made
 
-**Asked:** I chose "the robot starts in pieces" for more parts. Then, mid-build: the pieces should fly into the HUD so I know how many I have, how many I need, and which ones; and wrong-part cards that look different and bolt on bad parts if you take them, to fill the long stretches where nothing happens.
+**My direction:** I chose "the robot starts in pieces" for more parts. Then, mid-build: the pieces should fly into the HUD so I know how many I have, how many I need, and which ones; and wrong-part cards that look different and bolt on bad parts if you take them, to fill the long stretches where nothing happens.
 
 **Done:**
 - **The robot starts in pieces.** At the start of a reel it's a body on its boots with a slate head floating over it. Nine pieces, three per life, put it together: the **Booth** gives the left arm, the right arm, then the mainspring; the **Studio** the neck spring (the head stops floating), the wind-up key, then the lens; the **Home** the left leg, the right leg (it stops hopping on bare boots), then the music-box key. Each life's cards come 20 s apart in its act (Booth from 0:15, Studio 1:25, Home 2:35), and the card shows the actual next piece hovering over it. Each new piece pops on with a wobble. "LEFT ARM! / PIECE 4 OF 9". WHOLE means all nine; a lost take knocks the newest piece off one life. [At the start](devlog-shots/2026-11-13_1925_robot-in-pieces-start.png), [four pieces on](devlog-shots/2026-11-13_1925_robot-four-pieces.png).
@@ -800,7 +839,7 @@ Saturday morning: the goblin redesign as rigid parts moved by Blueprint (a real 
 
 ### 20:48: UI concepts: GPT Image Sunburst against Nano Banana Pro, then four variations
 
-**Asked:** a really good generated image of the game's UI from a well-respected generator or two, then four variations of the winner for me to pick elements from. Prompted as the genuine UI and abilities, and modelled, part of the scene.
+**My direction:** a really good generated image of the game's UI from a well-respected generator or two, then four variations of the winner for me to pick elements from. Prompted as the genuine UI and abilities, and modelled, part of the scene.
 
 **Done (fal, my OK first):** one prompt describing the real game and every HUD element as a physical prop in the projection booth: a TAKE slate and film cans for takes, a brass footage counter, a glass bell jar holding the robot with its nine pieces as ghost outlines (PIECES 4/9), a film-strip timeline with the act posts and THE CUT chasing the robot's head, and the FAST FORWARD ticket stub.
 - **GPT Image 2.6 Sunburst:** [concept](devlog-shots/2026-11-13_2010_ui-concept-sunburst.png). Clearest UI; the bell jar shows each piece; each strip ends in a labelled tab, THE STUDIO (FAST), THE BOOTH (SLOW), THE HOME, which may be the visual cue that replaces the text bands. Its output was only 1088 x 608.
@@ -840,7 +879,7 @@ Saturday morning: the goblin redesign as rigid parts moved by Blueprint (a real 
 
 ### 21:37: While I eat: the real HUD, a title screen and ending cards
 
-**Asked:** I was at dinner and asked for something useful in the meantime. I also said Claude could bring the editor to the front.
+**My direction:** I was at dinner and asked for something useful in the meantime. I also said Claude could bring the editor to the front.
 
 **Done (Claude):**
 - **First look at the real HUD.** With the editor up, the HUD could finally be captured during play. Two problems showed. The new slate and counter images were drawn on top of their own numbers, so TAKE and FT were blank. On this wider viewport, the HOME plaque slid under the ticket. Both are fixed: numbers now draw over their art, PIECES n/9 is cream (it was lost on the jar's dark base), and the plaques sit further left.
@@ -917,7 +956,7 @@ Nothing is built yet; I pick next session.
 
 ### 23:09: A research worker goes online
 
-**Asked:** I wanted us to look online for skills and ideas that carry the concept further, plus some subtle and some explosive Niagara effects for the important moments, and to check whether a cheap Gemini model ("Gemini Hydrogen") is on fal for second opinions on decisions.
+**My direction:** I wanted us to look online for skills and ideas that carry the concept further, plus some subtle and some explosive Niagara effects for the important moments, and to check whether a cheap Gemini model ("Gemini Hydrogen") is on fal for second opinions on decisions.
 
 **Done:** a headless Sonnet worker on the jam credit searched the web while the lead kept building ($0.45, 28 turns). Report: [research/2026-11-14-juice-and-skills.md](research/2026-11-14-juice-and-skills.md).
 - **Do first:** hit-stop and camera shake on CUT!, brass spark burst on a piece, squash and stretch, post-process pulses (vignette, chromatic aberration, flash), a chalk puff when a piece goes back to chalk, film-scrap confetti on the Cut, a slow-mo beat on the first card and the last piece.
@@ -993,13 +1032,13 @@ Nothing is built yet; I pick next session.
 
 **Setback:** the offscreen capture tool doesn't show late post-process effects, so the pulse looked like it did nothing until checked in the real play window.
 
-**Asked mid-step:** "the goblins could be better too." Planned next.
+**My direction, mid-step:** "the goblins could be better too." Planned next.
 
 ---
 
 ### 23:58: The goblins get rebuilt
 
-**Asked:** the goblins could be better. I chose rigid parts built by script (free) over a fal concept, and described what I wanted from the earlier UI render: a red hat as their visual key, small gremlin ears, a huge almost Cheshire-cat mouth full of teeth, a squat body with little arms and legs, and very animated movement, almost chimp or imp.
+**My direction:** the goblins could be better. I chose rigid parts built by script (free) over a fal concept, and described what I wanted from the earlier UI render: a red hat as their visual key, small gremlin ears, a huge almost Cheshire-cat mouth full of teeth, a squat body with little arms and legs, and very animated movement, almost chimp or imp.
 
 **Done:**
 - **Blender, by script** (`art/gremlin/build_goblin.py`): one squat potato that is both head and belly, a red fez with a black tassel tipped back at an angle, bat ears poking out under it with red insides, big yellow eyes with slit pupils under a scheming frown, and an ear-to-ear grin with two rows of teeth. Thin chimp arms end in three-clawed hands, and short bowed legs end in big three-toed feet. Each part is its own mesh with its pivot at the joint.
@@ -1029,7 +1068,7 @@ Nothing is built yet; I pick next session.
 
 ### 00:02: The X tear grows back
 
-**Asked (my play note from Friday):** after the X tears out a stretch of strip, the film should grow back and rejoin, not appear whole again in one frame.
+**My direction (my play note from Friday):** after the X tears out a stretch of strip, the film should grow back and rejoin, not appear whole again in one frame.
 
 **Done** (`art/clarity/make_clarity21.py`): over the last 1.2 s of a tear, both torn ends grow toward the spot where the X was drawn, their glowing ragged edges closing the gap. When they meet there's a chalk puff and a splice clack. The strip is safe again under the robot once the healing film has passed it, so you can hop back a little early.
 
@@ -1075,7 +1114,7 @@ Nothing is built yet; I pick next session.
 
 ### 00:20: New art for the life cards
 
-**Asked:** life-card art first. The part cards (the Maker making a piece, developing into colour) are great; the short, pale life cards needed vivid art that fits what they give.
+**My direction:** life-card art first. The part cards (the Maker making a piece, developing into colour) are great; the short, pale life cards needed vivid art that fits what they give.
 
 **Done:** three Nano Banana 2 edits ($0.24 in all), using the bench card I liked as the style reference, so they share its hand-tinted engraving look:
 - **Studio (+100 ft of footage):** a brass film can bursting open with amber film spooling out.
@@ -1095,7 +1134,7 @@ They're keyed and packed into the card sheet in the cells the life cards read (`
 
 ### 00:29: Overnight look pass, item 1: life cards look like rewards
 
-**Asked (before bed):** a beautify, juice, feel and look pass over everything while I sleep, life cards first: the new art read washed out, and they had to look clearly different from the part cards, like rewards.
+**My direction (before bed):** a beautify, juice, feel and look pass over everything while I sleep, life cards first: the new art read washed out, and they had to look clearly different from the part cards, like rewards.
 
 **Done** (`art/look/ue_life_card.py`, `art/fx/make_fx2.py`, `art/clarity/make_clarity24-25.py`):
 - **The art no longer goes pale under the stage light.** Life cards have their own material (`M_LifeCard`): unlit, saturation lifted, and a gold sheen that sweeps across every couple of seconds.
@@ -1200,7 +1239,7 @@ They're keyed and packed into the card sheet in the cells the life cards read (`
 ---
 
 ### 03:55: The foe fight
-**Asked:** last night I asked whether, for a boss, the film strips could "suddenly switch up and go any direction". With the look pass done, the lead built the foe from its spec (`docs/design/boss-foe.md`) while I slept.
+**My direction:** last night I asked whether, for a boss, the film strips could "suddenly switch up and go any direction". With the look pass done, the lead built the foe from its spec (`docs/design/boss-foe.md`) while I slept.
 
 **Done:** if more junk than pieces went into the friend by the wrap, the FOE card no longer shows straight away. The foe drops onto the far end of the reel: the goblin rig at 1.7x in rust red. Every 2.8 s it hops to another strip and throws a junk cog down it. The cog rolls at that strip's speed. Clap when it is in front of you on your strip and it flies back glowing. If the foe is still on that strip, that's a hit. Each hit is a hit-stop, a flash, sparks and a chalk puff, and a part flies off (left arm, right arm, then the fez). After hits one and two **the strips switch**: each strip takes another's speed, so the strip you're on can suddenly crawl or race. The robot doesn't move; the world changes under it. On the third hit it falls apart in slow motion and the card reads **I TOOK IT APART**. A cog you miss is ordinary junk (slow, and one more for the tally), not a lost take. If 60 seconds pass without three hits, it gets away and the FOE card shows as before. Test key **B** jumps to the wrap with nine junk.
 
@@ -1224,7 +1263,7 @@ The win card first tinted the friend red because its title contained "FOE". Rena
 
 ### 09:10: Morning review of the overnight work (Fable), and a second pass on the foe
 
-**Asked:** the overnight juice and play pass ran on Opus by mistake. I asked Fable to look over all of it and make it better where it needed it.
+**My direction:** the overnight juice and play pass ran on Opus by mistake. I asked Fable to look over all of it and make it better where it needed it.
 
 **How it was reviewed:** the live Blueprints were dumped and read (not the patch files), then a bot played a normal run and the foe fight while the real window was captured. The normal run is in good shape: no Blueprint errors in the log, the life cards, light leaks and ink outlines all hold up. The foe fight and one old effect did not.
 
@@ -1254,7 +1293,7 @@ The win card first tinted the friend red because its title contained "FOE". Rena
 
 ### 10:45: An Opus worker fixes the list, and Fable checks it
 
-**Asked:** fix what the morning review left open, and any other flow and gameplay problems. To save tokens, Fable wrote the method down and handed the work to an Opus worker, then checked the result itself. I was tidying the house for family.
+**My direction:** fix what the morning review left open, and any other flow and gameplay problems. To save tokens, Fable wrote the method down and handed the work to an Opus worker, then checked the result itself. I was tidying the house for family.
 
 **Done by the worker** (`art/clarity/make_flow1.py`, `art/postfx/ue_make_foeskin.py`, `art/hud/ue_foe_pips.py`, `art/postfx/ue_dustmotes_nocollide.py`, `art/tools/ue_foe_bot.py`):
 - **The foe is red.** It has its own rust-red skin material (`M_FoeSkin`) instead of a tint on the dark goblin skin.
@@ -1291,7 +1330,7 @@ The win card first tinted the friend red because its title contained "FOE". Rena
 
 ### 12:10: The seven open calls, decided and built
 
-**Asked:** fix the seven things the flow pass had left for me to decide. I told Fable to do it itself this time.
+**My direction:** fix the seven things the flow pass had left for me to decide. I told Fable to do it itself this time.
 
 **Done** (`art/clarity/make_flow3.py`, `make_flow3b.py`):
 - **THE FORK is now THREE LIVES.** Nothing forks any more; the line still names the three strips.
@@ -1320,7 +1359,7 @@ The win card first tinted the friend red because its title contained "FOE". Rena
 
 ### 13:35: A game round the run: menus, pause, options, credits; a smaller banner; limbs that stretch
 
-**Asked:** I was with my folks and left Fable a list. A game loop with an end and credits, and the options a game like this needs. The banner that pops up should be smaller and the plain text friendlier. BUILD A FRIEND had come up far into my run (1394 ft). The fixes from our last talk: the reel bar says HOME with strip left after it, the pop-ups cover the play area and a goblin is on me when they close, the white in the logo's reels. The robot's legs each move as one piece: every part should get its own comical stretch and over-reach, as in a Fleischer cartoon. And the goblins look like black Smarties with big teeth (later).
+**My direction:** I was with my folks and left Fable a list. A game loop with an end and credits, and the options a game like this needs. The banner that pops up should be smaller and the plain text friendlier. BUILD A FRIEND had come up far into my run (1394 ft). The fixes from our last talk: the reel bar says HOME with strip left after it, the pop-ups cover the play area and a goblin is on me when they close, the white in the logo's reels. The robot's legs each move as one piece: every part should get its own comical stretch and over-reach, as in a Fleischer cartoon. And the goblins look like black Smarties with big teeth (later).
 
 **Done** (`art/clarity/make_shell1.py`, `art/hud/ue_shell.py`, `art/hud/make_shell_art.py`):
 - **Title menu:** START, HOW TO PLAY, OPTIONS, CREDITS, QUIT. W/S or arrows move, Space or Enter picks. The chalk friend stands at the left; the best footage shows at the right once there is one.
@@ -1363,7 +1402,9 @@ The win card first tinted the friend red because its title contained "FOE". Rena
 
 ### 19:05: Music, a clear view of the robot, and a gremlin worth modelling
 
-**Asked:** I played the build (great fun) and came back with three things. Something is stuck to the robot's right arm from the first frame and hides it. I made five tracks in Suno (`audio/music`): the four long songs should change from go to go, and speed up and slow down with the strip the player is on, in a cartoony way that never turns discordant. And I drew a proper gremlin: a character sheet, the same character cut into poseable parts, and an image-to-3D model of those parts (`docs/design/gremlin_model_parts.glb`). Can it be used, or do we model it in Blender?
+**My direction:** I played the build (great fun) and came back with three things. Something is stuck to the robot's right arm from the first frame and hides it. I made five tracks in Suno (`audio/music`): the four long songs should change from go to go, and speed up and slow down with the strip the player is on, in a cartoony way that never turns discordant. And I designed the gremlin myself: a character sheet, the same character cut into poseable parts, and an image-to-3D model of those parts (`docs/design/gremlin_model_parts.glb`). Can it be used, or do we model it in Blender?
+
+![My gremlin character, cut into parts](devlog-shots/2026-11-14_1830_shane-gremlin-parts-sheet.jpg)
 
 **Done** (`art/clarity/make_shell2.py`):
 - **The thing on the arm** was three things: the mainspring, the lens and the music-box key, left on the robot's right side from the story I cut ("the robot builds itself"). The pieces go to the friend in the jar now, so they are hidden.
@@ -1383,7 +1424,7 @@ The win card first tinted the friend red because its title contained "FOE". Rena
 
 ### 19:40: My gremlin is in the game
 
-**Asked:** turn my gremlin model into the in-game goblin, with more parts than the old one so it can stretch and take comical strides, and keep the animation I like.
+**My direction:** turn my gremlin model into the in-game goblin, with more parts than the old one so it can stretch and take comical strides, and keep the animation I like.
 
 **Done** (an Opus session, scripts in `art/gremlin/`):
 - **Cut by position** (`cut_gremlin.py`): every face of the 499k-triangle model was dropped onto a 2 mm grid on the sheet and the filled regions flood-filled. That gave exactly the 21 pieces on my sheet, each whole: four ears, the head with the fedora and upper teeth, the jaw, a neck, the chest, the belly with the waistcoat, and two each of upper arms, forearms, hands, thighs, shins and shoes. Kept: the belly with the waistcoat (it matches my character art) and the mirrored pair of ears (the other pair both lean the same way).
@@ -1411,7 +1452,7 @@ The win card first tinted the friend red because its title contained "FOE". Rena
 
 ### 20:05: Later lunge, music that dies with the run, my name in the credits
 
-**Asked:** I moved the jaw a little and put a skin-coloured sphere inside the head so no holes show between the parts (the gremlins look fantastic). They lunge too early: they should do it later, so it looks like they try to grab the player. Then a list of notes: wasted cards should disintegrate, collecting cards should feel more rewarding, the clap should spare a card when it takes a goblin, the music should grind to a halt when the player dies and really speed up on boost, my name and email in the credits, mouse clicks on the menu, Xbox controller support, and gremlins bursting into ragdoll parts like a plastic toy. We are at 86% of the budget, so as economically as possible.
+**My direction:** I moved the jaw a little and put a skin-coloured sphere inside the head so no holes show between the parts (the gremlins look fantastic). They lunge too early: they should do it later, so it looks like they try to grab the player. Then a list of notes: wasted cards should disintegrate, collecting cards should feel more rewarding, the clap should spare a card when it takes a goblin, the music should grind to a halt when the player dies and really speed up on boost, my name and email in the credits, mouse clicks on the menu, Xbox controller support, and gremlins bursting into ragdoll parts like a plastic toy. We are at 86% of the budget, so as economically as possible.
 
 **Done** (`art/clarity/make_notes1.py`):
 - **The lunge** starts at 380 units from the robot instead of 650. A test gremlin rears up at 370 and is in the full pose at 313, right as it reaches the player.
@@ -1426,7 +1467,7 @@ The win card first tinted the friend red because its title contained "FOE". Rena
 
 ### 20:25: The menus take the mouse
 
-**Asked:** the start menu buttons can't be clicked with a mouse.
+**My direction:** the start menu buttons can't be clicked with a mouse.
 
 **Done** (`art/clarity/make_mouse1.py`, variables added by `art/clarity/ue_mouse1.py`): the cursor shows whenever a menu or a text page is open and hides in play. Moving the mouse over a row selects it (with the same small tick as the keys), and a left click picks it, exactly like Space or Enter. On How to Play and the credits any click goes back. The keys work as before. It works on every menu that uses the five menu rows: title, pause and options.
 
@@ -1436,7 +1477,7 @@ The win card first tinted the friend red because its title contained "FOE". Rena
 
 ### 20:35: Xbox controller
 
-**Asked:** Xbox controller support.
+**My direction:** Xbox controller support.
 
 **Done** (`art/clarity/make_pad1.py`, 15 new key events in `BP_Robot`; Windows reads Xbox pads without a plugin). Each pad input calls the same event as its keyboard key, so menus and play behave the same:
 - D-pad or left stick **up/down**: change strip in play, move through the rows in menus (W/S).
@@ -1452,7 +1493,7 @@ The win card first tinted the friend red because its title contained "FOE". Rena
 
 ### 23:55: A clap that knows where the card is
 
-**Asked:** my note 1c. If a gremlin is right in front of a part card, the clap should take the gremlin and spare the card. A strike slightly off the card's centre should get the gremlin without breaking the card, and the card is then collected as I pass it. The skill is knowing how far the head shoots out.
+**My direction:** my note 1c. If a gremlin is right in front of a part card, the clap should take the gremlin and spare the card. A strike slightly off the card's centre should get the gremlin without breaking the card, and the card is then collected as I pass it. The skill is knowing how far the head shoots out.
 
 **Done:** before, a clap tore any card on my strip anywhere in the clap's reach (x -70 to 340), even when a gremlin took the same hit. Now the gremlins are checked first: if the clap hit one, the card is spared. And a card only tears when its centre sits in the middle of the reach (x 60 to 260), so a clap near its edge misses it. One line in `BP_Card.ReceiveTick` (`art/clarity/make_precision1.py`).
 
@@ -1468,7 +1509,7 @@ Also tonight, before bed, I gave Claude a new list (robot remodel from my design
 
 ### 00:00: A torn card falls apart, a collected one sings into the jar
 
-**Asked:** my notes 1a and 1b. A card I clap by mistake should visibly disintegrate, wasted. Collecting a card by walking past it should feel more rewarding, so players want to do it.
+**My direction:** my notes 1a and 1b. A card I clap by mistake should visibly disintegrate, wasted. Collecting a card by walking past it should feel more rewarding, so players want to do it.
 
 **Done:**
 - **Sounds:** an Opus worker made five sound effects on fal (`sonilo/v1.1/text-to-sound-effects`, two takes each, about $0.03 in all): a card rip, a pick-up chime, a plastic-toy pop for the gremlins, a clapper snap, and the film tail slapping a spinning-down reel for a lost run. In Unreal as `/Game/ReelLives/Audio/Sfx/Sfx_*`; listed in `docs/AI-ASSETS.md`. The picks were made by loudness curve, not by ear yet.
@@ -1482,7 +1523,7 @@ Also tonight, before bed, I gave Claude a new list (robot remodel from my design
 
 ### 00:03: Gremlins burst like plastic toys
 
-**Asked:** my note 7. Killed gremlins should burst into their body parts, flying off as physics objects like an exploding plastic toy.
+**My direction:** my note 7. Killed gremlins should burst into their body parts, flying off as physics objects like an exploding plastic toy.
 
 **Done:** every real hit (`KnockOff` with power 0.4 or more) now takes my gremlin apart: all 18 parts (head with the fedora, jaw, ears, neck, belly, arms, forearms, hands, thighs, shins, shoes) come loose, become physics bodies, get pushed outward from the belly and up along the hit with a random spin, bounce off the film strips, and the whole lot is gone 3 seconds later. A plastic-toy pop plays with each one. The parts got simple box collision. Nothing new is spawned, so a run of kills only adds short-lived physics bodies. The Burner's own exit after it lights its mark stays the old whole-body flight. The film tail slapping the reel now plays when a run is lost, over the music grinding down. Code: `art/clarity/make_burst1.py`.
 
@@ -1492,7 +1533,7 @@ Also tonight, before bed, I gave Claude a new list (robot remodel from my design
 
 ### 00:06: A 1920s face for the words
 
-**Asked:** my note 9, a fitting vintage 1920s Google font for the UI and general text, stylish but semi-vintage.
+**My direction:** my note 9, a fitting vintage 1920s Google font for the UI and general text, stylish but semi-vintage.
 
 **Done:** an Opus worker compared candidates on real game strings (`art/fonts/font_compare.png`) and chose **Limelight** (picture-palace Art Deco) for the big lines and **Josefin Sans** (1920s geometric sans, readable small) for everything else; both SIL Open Font License, licence files kept in `art/fonts/`, reasons in `art/fonts/CHOICE.md`. In Unreal they are two runtime fonts, `F_ReelDisplay` and `F_ReelBody` (Regular, SemiBold, Bold), set on 23 HUD texts: banners, card heads and the menu title in Limelight; subs, menus, labels, pieces and the ticket in Josefin. The take and footage digits stay as they were. Rule from the comparison: Limelight never below about 32 px, it clogs. Code: `art/hud/ue_fonts.py`. The key-cap strip is still baked Roboto art.
 
@@ -1502,7 +1543,9 @@ Also tonight, before bed, I gave Claude a new list (robot remodel from my design
 
 ### 00:10: The robot from my drawing
 
-**Asked:** my note 8. Remodel the robot from my design render (clapperboard head, spring neck, brass ball body, red bulb, wind-up key, thin limbs, big round shoes), with every limb part separate so knees and elbows bend and the clapper opens like a mouth. Gemini could not split it into parts, so model it directly.
+**My direction:** my note 8. The robot is redesigned, by me: my design render (clapperboard head, spring neck, brass ball body, red bulb, wind-up key, thin limbs, big round shoes), with the chalk eyes from my second sketch. Remodel him from it, with every limb part separate so knees and elbows bend and the clapper opens like a mouth. Gemini could not split it into parts, so model it directly.
+
+![My robot design render](devlog-shots/2026-11-14_2352_shane-robot-v2-design.jpg)
 
 **Done:** an Opus worker built it in headless Blender by script (`art/robot2/build_robot2.py`, `robot_v2.blend`, 34.9k triangles): the same 16 parts with the same joint pivots, height (116.5 cm) and material slot names as the old robot, so the game's existing animation drives it unchanged. Forearms carry their hands; the bulb is part of the body with a new emissive `M_BulbRed`. The slate front keeps the old UV layout, so the chalk face still plays on it. In Unreal the parts are `SM_Robot2_*`, swapped into every `BP_Robot` mesh component, and the part cards now show the new parts (`art/clarity/make_robot2_cards.py`). The robot brass is a little warmer and less grimy. Blender renders: `art/robot2/renders/`.
 
@@ -1512,7 +1555,7 @@ Also tonight, before bed, I gave Claude a new list (robot remodel from my design
 
 ### 00:19: Fewer words, each one in its place
 
-**Asked:** my note 10, tidy up the various statements and messages that pop up all over the place. The plan was an audit of every banner, hint and card (`docs/design/message-tidy.md`).
+**My direction:** my note 10, tidy up the various statements and messages that pop up all over the place. The plan was an audit of every banner, hint and card (`docs/design/message-tidy.md`).
 
 **Done:** an Opus worker applied the plan to `BP_Director` by patch (`art/clarity/make_tidy1.py`, `make_tidy2.py`); text and message timing only, no mechanics. **Cut** seven lines that repeated something already on screen: FAST FORWARD READY (the ticket says it), + FAST FORWARD, the second SPLICE!/FREEZE FRAME/GRIEF on contact (the "ahead" hint already named them), THREE LIVES at 26 s, and THAT'S A WRAP!, which the wrap card hid after a tenth of a second anyway. **Fixed a clash:** losing a take with a piece in the jar used to show "CUT! A PIECE WAS KNOCKED OFF" over the takes count in the same frame, so you never learned how many takes were left; now it is one banner, "CUT! TWO TAKES LEFT · A PIECE FELL OFF". **Reworded** in the house style (short headline, one caps line, `·` as the separator): ACT I: THE BOOTH / ACT II: THE STUDIO / ACT III: THE HOME with "THREE PIECES ON THIS STRIP", NINE PIECES · OUTRUN THE CUT, FREE THIS TIME · SOON IT COSTS A TAKE, THE X IS COMING: HOP OFF!, JUNK 2 VS PIECES 1, CRADLE 2/3 · THREE BUYS A TAKE, STAY ON HIS STRIP TILL IT DEVELOPS, MUSIC BOX! and FAST FORWARD! as keepsake headlines, and the counters that the HUD already shows (piece n of 9, foe hit n of 3) dropped from the banners. Card feet and the title foot use `·` instead of runs of spaces; HOW TO PLAY says strips and gremlins, and gains the rule nobody was told: "(more JUNK than pieces builds a FOE)". **Timing:** BUILD A FRIEND waits a second longer after TAKE n, and the keys strip leaves at 11 s instead of 16, before the first hazard hint. OUCH! and RIGHT BACK AT IT! now wait their turn (1.5 s after any other banner) so they cannot wipe a piece name.
 
@@ -1522,7 +1565,7 @@ Also tonight, before bed, I gave Claude a new list (robot remodel from my design
 
 ### 00:27: Gremlins gnash, wobble their ears and blink
 
-**Asked:** my note 2A. The gremlin's jaw should gnash in a menacing way on the pivot I set: Roll 0 to -30 and back, and Pitch -10 to 20 and back. The separate ears should wiggle, wobble and stretch when they lunge. The `EyeBlink` sphere I put in the head should flick from scale X 0 to 0.1975 for a frame or two, so they blink.
+**My direction:** my note 2A. The gremlin's jaw should gnash in a menacing way on the pivot I set: Roll 0 to -30 and back, and Pitch -10 to 20 and back. The separate ears should wiggle, wobble and stretch when they lunge. The `EyeBlink` sphere I put in the head should flick from scale X 0 to 0.1975 for a frame or two, so they blink.
 
 **Done** in `BP_Gremlin.ImpTick` (`art/clarity/make_gnash1.py`): walking, the jaw chews small and slow while it grinds side to side. In the lunge it gnashes fast and wide, opening to the full -30 with the -10 to 20 grind. A knocked gremlin's jaw hangs wide open. The ears keep their wiggle, and now stretch along their length and squash across, a little all the time and a lot in the lunge, with a fast wobble. Each gremlin blinks for about 0.06 s every 3 s, on its own phase.
 
@@ -1534,7 +1577,7 @@ I also had an Opus worker write `docs/design/sfx-list.md` (my note 5A): 39 propo
 
 ### 00:32: No more square corners on the sunbursts
 
-**Asked:** my note 3A. Some life cards' sunburst glow showed the texture tiling, with the glow's corners visible at each corner of the effect.
+**My direction:** my note 3A. Some life cards' sunburst glow showed the texture tiling, with the glow's corners visible at each corner of the effect.
 
 **Done:** the halo material spins its rays by rotating the texture coordinates, so the corners of the quad read outside the texture and wrapped round to the other side of it. The rays texture `T_SunRays` now clamps instead of wrapping. Its edges are black, so everything outside the circle is dark. One setting, no Blueprint change.
 
@@ -1544,7 +1587,7 @@ I also had an Opus worker write `docs/design/sfx-list.md` (my note 5A): 39 propo
 
 ### 04:51: Big gremlins take more than one clap
 
-**Asked:** my note 1A. The larger a gremlin is, the more hits it should take.
+**My direction:** my note 1A. The larger a gremlin is, the more hits it should take.
 
 **Done** in `BP_Gremlin` (`art/clarity/make_hp1.py`): plain gremlins now come in sizes from 0.9 to 1.3, and Chewers from 1.4 to 1.65; Burners stay small. Size sets the hits: under 1.15 one clap, under 1.45 two, bigger three. A clap or Fast Forward hit on a gremlin with hits left flashes it white, knocks it back with a bonk and a chalk puff, and resets its lunge. The last hit bursts it as before. The Cut, my own bump into one, and the foe fight are unchanged.
 
@@ -1554,7 +1597,7 @@ I also had an Opus worker write `docs/design/sfx-list.md` (my note 5A): 39 propo
 
 ### 04:54: Rotten tomatoes from the stalls
 
-**Asked:** the rest of my note 1A. The big gremlins could throw something that knocks the robot back slightly; I wasn't sure what, maybe something old-school cartoon.
+**My direction:** the rest of my note 1A. The big gremlins could throw something that knocks the robot back slightly; I wasn't sure what, maybe something old-school cartoon.
 
 **Done:** the 1920s audience's verdict, a **rotten tomato**. Each gremlin with two or more hits left lobs one tomato when it's on my strip 450 to 800 units ahead. It leaves its right hand, spins, and arcs to where my head is, landing 0.75 s later. Hop off the strip to dodge it. If I'm still on that strip and on the ground when it lands: a splat of scraps, a rip-and-squelch, a shake, the knock wobble, a hurt face, "SPLAT! HOP TO DODGE", and the Cut gains 60 units. That's the small knock back; no take is lost. The tomato is a red ball on each gremlin (`MI_Tomato`), with no new actors. Code: `art/clarity/ue_tomato_setup.py`, `art/clarity/make_tomato1.py`.
 
@@ -1564,7 +1607,7 @@ I also had an Opus worker write `docs/design/sfx-list.md` (my note 5A): 39 propo
 
 ### 04:59: Box office takings
 
-**Asked:** my note 4A. A fun score built from everything the player touches: good things add, debuffs subtract, maybe multiplied by the feet travelled, so there's something to beat and a competitive edge. It has to fit the 1920s nitrate-punk look without cluttering the screen.
+**My direction:** my note 4A. A fun score built from everything the player touches: good things add, debuffs subtract, maybe multiplied by the feet travelled, so there's something to beat and a competitive edge. It has to fit the 1920s nitrate-punk look without cluttering the screen.
 
 **Done:** the score is the picture's **box office takings**, in dollars.
 - Each clap hit on a gremlin is +$25 and builds an **ENCORE** streak. Gains are multiplied by 1 + streak/2, rounded down, up to x5.
@@ -1581,7 +1624,7 @@ Code: `art/hud/ue_score.py`, `art/clarity/make_score1.py` (new Director event `A
 
 ### 05:02: The robot comes apart into 37 pieces, and lives
 
-**Asked:** my note 6A. Break the little robot down like the gremlins, into as many parts as possible, so it can have lifelike motion with ultra squash and stretch. Add something that bobs and bounces along with all his motion without adding resource overhead.
+**My direction:** my note 6A. Break the little robot down like the gremlins, into as many parts as possible, so it can have lifelike motion with ultra squash and stretch. Add something that bobs and bounces along with all his motion without adding resource overhead.
 
 **Done:**
 - **Model:** an Opus worker split robot v2 in headless Blender (`art/robot3/`, 35.9k triangles, only 3% more than v2). The body is now a top dome, a middle band and a lower bowl, with iron caps on the cut faces. The four side cogs, the three gauges and their needles are separate. The red bulb sits on its own little coil spring, and that's the bobbing thing. The hands come off the forearms, the top clapper bar comes off the slate, and the key splits into shaft and bow. Every v2 part keeps its name, pivot and material slots.
@@ -1599,7 +1642,7 @@ Code: `art/hud/ue_score.py`, `art/clarity/make_score1.py` (new Director event `A
 
 ### 05:55: Eight new sounds in place of the placeholders
 
-**Asked:** I said yes to generating the must-have sounds from `docs/design/sfx-list.md`.
+**My direction:** I said yes to generating the must-have sounds from `docs/design/sfx-list.md`.
 
 **Done:** the Opus sound worker made eight on fal (`sonilo/v1.1/text-to-sound-effects`, two takes each, about $0.016; tonight's fal total is about $0.04). They're in place of the old placeholders:
 - `Sfx_Robot_Hop` on every hop
@@ -1621,7 +1664,7 @@ Code: `art/clarity/make_sfx1.py`. The takes were picked by loudness shape, not b
 
 ### 08:08: The last five sounds
 
-**Asked:** I said yes to making the five must-have sounds the permission system blocked last night.
+**My direction:** I said yes to making the five must-have sounds the permission system blocked last night.
 
 **Done:** made them on fal myself (same sonilo model, two takes each, about $0.023, so tonight's fal total is about $0.06), picked a take of each by loudness shape, and wired them in with `art/clarity/make_sfx2.py`:
 - `Sfx_Card_Pickup` (bell and card flick) in place of the synth pickup blip; last night's chime stays under it, a bit quieter
@@ -1638,7 +1681,7 @@ Code: `art/clarity/make_sfx1.py`. The takes were picked by loudness shape, not b
 
 ### 08:50 to 09:55: Bug hunt on the full loop, then four cheap silent-film touches
 
-**Asked:** with hours left, an Opus worker should check the whole loop on screen (menu, play, lose a take, CUT!, restart, wrap, credits, title, best saved), fix what a player would hit, then add cheap era polish: intertitle praise and taunts, a rating stamp on the end card, an iris on every lost take, letterbox bars when the Cut is close. Audio muted for all testing (`au.MuteAudio 1`, runtime only; Shane's new rule).
+**My direction:** with hours left, an Opus worker should check the whole loop on screen (menu, play, lose a take, CUT!, restart, wrap, credits, title, best saved), fix what a player would hit, then add cheap era polish: intertitle praise and taunts, a rating stamp on the end card, an iris on every lost take, letterbox bars when the Cut is close. Audio muted for all testing (`au.MuteAudio 1`, runtime only; Shane's new rule).
 
 **The loop, seen on screen** (`art/tools/ue_flow_check.py`, `setup/vpshot.ps1` crops a `winshot.ps1` capture to the play viewport): title menu, START, TAKE 1 ACTION!, a lost take (CUT! TWO TAKES LEFT, hit-stop, Cut pushed back), the CUT! card with box office and best, any key into Take 2 with three takes, a skip to the wrap, the wrap card, any key to the credits, any key to the title. All worked.
 
@@ -1675,7 +1718,7 @@ Code: `art/clarity/make_sfx1.py`. The takes were picked by loudness shape, not b
 
 ### 10:55 to 11:30: My twelve notes from this morning's play
 
-**Asked:** I played the build and sent twelve notes: the lamp should swing when things happen; the menu and credits text is ugly and the highlight bar sits off the words; the credits undersell what I did by hand in the engine; the title screen's robot is a scribble and the best-feet line looks amateur; HOW TO PLAY is out of date; the Fast Forward ticket pulses but its bar doesn't, and the bar should start empty; the HUD doesn't match the takes left; losing a take needs bits flying; big gremlins turn up straight away; the memory piece sits inside its card; pickups appear over holes; the sounds are harsh and uneven; the robot walks through gremlins and loses nothing; and where did the scoring go?
+**My direction:** I played the build and sent twelve notes: the lamp should swing when things happen; the menu and credits text is ugly and the highlight bar sits off the words; the credits undersell what I did by hand in the engine; the title screen's robot is a scribble and the best-feet line looks amateur; HOW TO PLAY is out of date; the Fast Forward ticket pulses but its bar doesn't, and the bar should start empty; the HUD doesn't match the takes left; losing a take needs bits flying; big gremlins turn up straight away; the memory piece sits inside its card; pickups appear over holes; the sounds are harsh and uneven; the robot walks through gremlins and loses nothing; and where did the scoring go?
 
 **What Claude (Fable) found first**, by reading the live Blueprints:
 - Walking into a gremlin only pulled the Cut 160 units closer. Nothing on screen said so, so it read as "nothing happens".
@@ -1724,7 +1767,7 @@ Code: `art/clarity/make_sfx1.py`. The takes were picked by loudness shape, not b
 
 ### 11:36 to 12:00: I played it: the bite rule was wrong, and the chalk robot goes
 
-**Asked:** after playing the new build. Letting me walk through gremlins for 30 seconds and then suddenly taking a take is bad play; a bump should take energy and knock me back, and the take ends when the energy is gone. The top-left of the HUD made no sense to me: the slate, three discs, then "HOME CRADLES" and dots. Lift the take numeral, move the box office line up under the feet, remove what isn't used. Every score should show where it goes. Do gremlin parts really use physics, or is it one canned death? Less puff under the robot, and make him a touch bigger. And the chalk robot in the jar and on the end cards looks terrible and nothing like our character: replace it everywhere.
+**My direction:** after playing the new build. Letting me walk through gremlins for 30 seconds and then suddenly taking a take is bad play; a bump should take energy and knock me back, and the take ends when the energy is gone. The top-left of the HUD made no sense to me: the slate, three discs, then "HOME CRADLES" and dots. Lift the take numeral, move the box office line up under the feet, remove what isn't used. Every score should show where it goes. Do gremlin parts really use physics, or is it one canned death? Less puff under the robot, and make him a touch bigger. And the chalk robot in the jar and on the end cards looks terrible and nothing like our character: replace it everywhere.
 
 **Done (`art/hud/ue_ship3.py`, `art/clarity/make_ship3.py`):**
 - **Energy.** Three pips a take, shown beside the cans as ENERGY ● ● ●. A gremlin bump costs one pip from the first second, knocks me back, pulls the Cut closer, and gives a second of grace: "OUCH! · TWO BUMPS LEFT", then "ONE BUMP LEFT". The third bump loses the take ("The gremlins wore you down.") and the pips refill. The 30-second free period is gone.
@@ -1748,7 +1791,7 @@ Code: `art/clarity/make_sfx1.py`. The takes were picked by loudness shape, not b
 
 ### 12:05 to 12:35: The cut-fall, an end card with some class, mindseed presents, and the entry paperwork
 
-**Asked:** I'm loving where the game is. When the strip is snipped out from under the robot, hold for a moment so I can watch him fall through. The died screen still looks terrible: give it class and pizzazz. Should my company name and logo be on it somewhere, with Made in Unreal and a fun splash or loading screen? Check the jam rules, get the itch.io text ready to paste, and see which side prizes we could fit. And what happened to the skills?
+**My direction:** I'm loving where the game is. When the strip is snipped out from under the robot, hold for a moment so I can watch him fall through. The died screen still looks terrible: give it class and pizzazz. Should my company name and logo be on it somewhere, with Made in Unreal and a fun splash or loading screen? Check the jam rules, get the itch.io text ready to paste, and see which side prizes we could fit. And what happened to the skills?
 
 **Done (`art/hud/ue_ship4.py`, `art/clarity/make_ship4.py`, `art/hud/make_menu_art.py`):**
 - **The cut-fall.** Before, a snipped strip burst the robot and hopped him aside in the same frame, so there was no fall at all. Now he drops through the gap at 0.35 speed for about 1.2 seconds, the iris waits for it, and only then does he hop to the next strip. A side find: while he was on a cut strip the game took $200 off the score every frame; that's fixed with it.
@@ -1771,7 +1814,7 @@ Code: `art/clarity/make_sfx1.py`. The takes were picked by loudness shape, not b
 
 ### 13:10 to 13:45: The music has to change, and what OpenAI made
 
-**Asked:** check Suno's terms for the music. Then: I can't pay for a plan, so I made two new tracks on OpenMusic; switch to those. And can Claude look in fal to see what I made with OpenAI, because I can't remember it all?
+**My direction:** check Suno's terms for the music. Then: I can't pay for a plan, so I made two new tracks on OpenMusic; switch to those. And can Claude look in fal to see what I made with OpenAI, because I can't remember it all?
 
 **Found:**
 - **Suno:** songs made on the free plan belong to Suno and are for "personal and non-commercial purposes" only. Paying later doesn't cover songs already made. A jam with cash prizes asks for the right licence on every asset, so my five honky-tonk tracks can't ship.
@@ -1788,7 +1831,7 @@ Code: `art/clarity/make_sfx1.py`. The takes were picked by loudness shape, not b
 
 ### 14:45 to 15:05: The real Unreal logo on the splash, and a test build for my brother
 
-**Asked:** check every unused file is out before a test build, as small as it can be, so I can send it to my brother on his terrible internet. Keep hardware ray tracing on: the judges' machines are far stronger than ours. Put the proper Unreal Engine logo on the splash; I have Epic's brand pack from 2024, after the logo change.
+**My direction:** check every unused file is out before a test build, as small as it can be, so I can send it to my brother on his terrible internet. Keep hardware ray tracing on: the judges' machines are far stronger than ours. Put the proper Unreal Engine logo on the splash; I have Epic's brand pack from 2024, after the logo change.
 
 **Found:** cleaning out unused assets doesn't shrink the build at all, because the cook only takes what the level uses. Most of the size is the engine itself (175 MB) and the global shader library that ray tracing needs. Epic's condensed brand guide says the splash should be a black background with the white logo, which is what my splash already is.
 
@@ -1805,7 +1848,7 @@ Code: `art/clarity/make_sfx1.py`. The takes were picked by loudness shape, not b
 
 ### 15:20 to 15:40: My own logo goes in
 
-**Asked:** the generated REEL LIVES logo had wonky lettering and a white area that never masked out properly. I redrew it myself in Affinity (`docs/design/RelLives-logo.svg`, exported as `REAL-LIVES_logo.png`); put mine in instead.
+**My direction:** the generated REEL LIVES logo had wonky lettering and a white area that never masked out properly. I redrew it myself in Affinity (`docs/design/RelLives-logo.svg`, exported as `REAL-LIVES_logo.png`); put mine in instead.
 
 **Done:** my logo replaces `T_Hv4_Logo` at twice the old resolution, in the same 5:1 box, so every place that used the old one picks it up without touching a widget: the HUD, the title card, the end cards and the Windows loading splash. The "AN ARCADE RUNNER" line under the old logo is gone with it. The same logo heads the itch cover image (`docs/itch/`).
 
@@ -1816,7 +1859,7 @@ Code: `art/clarity/make_sfx1.py`. The takes were picked by loudness shape, not b
 ---
 
 ### 16:35 to 16:55: His hands, his eyes, his heart; every ending seen at last
-**Asked:** I've never managed to play all the way through, so I'm hoping the ending stages all make sense. The story, the cards and the play all work but they're haphazard about what the player and the reels actually mean: tighten that. Slow the slow strip's music a good deal more, a marked difference but not dead slow. Then build.
+**My direction:** I've never managed to play all the way through, so I'm hoping the ending stages all make sense. The story, the cards and the play all work but they're haphazard about what the player and the reels actually mean: tighten that. Slow the slow strip's music a good deal more, a marked difference but not dead slow. Then build.
 
 **Done (`art/clarity/make_story1.py`, `art/hud/ue_story1.py`, `art/hud/make_menu_art.py`), words only, no rule changed:**
 - **One idea ties it together: each strip is a part of the Maker, and gives that part of the friend.** The Booth is his hands (arms and mainspring), the Studio his eyes (neck, key and lens), the Home his heart (legs and music-box key). The pieces already came from those strips; now the game says so.
@@ -1846,7 +1889,7 @@ Code: `art/clarity/make_sfx1.py`. The takes were picked by loudness shape, not b
 **The itch.io check (through my own Chrome, read only):** the Reel Lives page is a draft with the description pasted, but no build, cover, screenshots or video yet, and it must be public before the jam will take it. I've joined the jam and not yet submitted. The real submit form has fields the checklist never had (how to play, student or not, pre-jam list, my take on the theme, modifier tick boxes); answers for each are now in `docs/SUBMISSION.md`.
 
 ### 16:50: TODO pass (Hermes)
-Asked: work through docs/TODO.md, tick as I go, no package. Done, all five ticked, none packaged:
+My direction: work through docs/TODO.md, tick as I go, no package. Done, all five ticked, none packaged:
 - Window title: DefaultGame.ini now says Reel Lives (shows in the next package).
 - Slow reel music pitch 0.95 to 0.90.
 - Title robot: amber glow out, black drop shadow in.
@@ -1857,7 +1900,7 @@ Setback: this session could not grab the editor window (winshot found no window 
 ---
 
 ### Evening: The last list, on a nearly empty usage limit
-**Asked:** seventeen notes after playing, with very little Claude usage left and the jam closing tonight: make a to-do of all of it, do the simple things first, and write down each thing as it's finished so nothing is left hanging if the limit runs out. The list and its done log are in `docs/FINAL-PASS-2026-11-15.md`.
+**My direction:** seventeen notes after playing, with very little Claude usage left and the jam closing tonight: make a to-do of all of it, do the simple things first, and write down each thing as it's finished so nothing is left hanging if the limit runs out. The list and its done log are in `docs/FINAL-PASS-2026-11-15.md`.
 
 **Done:**
 - **Tagline.** "Builds a friend from its maker's hands, eyes and heart" read like the robot was taking him apart. New line: *A wind-up robot rummages through its maker's old reels for what he left on the cutting-room floor.* The itch description now tells the reels story: the old projector is worn, one reel stuck on fast and one on slow; in the frames you grab a trinket, an idea, or a bad part from the wrong set. The in-game words still say hands, eyes and heart.
@@ -1878,7 +1921,7 @@ Setback: this session could not grab the editor window (winshot found no window 
 ---
 
 ### 21:50 to 22:10: Looking at the last list on screen
-**Asked:** none of the evening's changes had been seen, because that session couldn't capture the play view. Look at each one and fix what's off.
+**My direction:** none of the evening's changes had been seen, because that session couldn't capture the play view. Look at each one and fix what's off.
 
 **Seen, and what changed:**
 - **The plate.** Up and right as asked, but the TAKES / ENERGY / CRADLES labels now ran through the plate's divider line. Labels one size smaller, tighter tracking, right edge 15 px left: they sit inside now. ![before](devlog-shots/2026-11-15_2210_plate-before.png) ![after, with a cradle landing](devlog-shots/2026-11-15_2210_cradle-lands-plate-after.png)
@@ -1893,7 +1936,7 @@ All checked in PIE with the sound muted, from frame bursts of the editor window.
 ---
 
 ### 22:10 to 22:25: The reels story, in the game's own words
-**Asked:** drop "his hands, his eyes, his heart" everywhere in the game and tell the reels story instead, matching the itch page: the robot hunts its maker's old reels for what he left behind; one reel is stuck on fast, one on slow; in the frames it grabs a trinket, an idea, or a bad part from the wrong set. Keep the lines short.
+**My direction:** drop "his hands, his eyes, his heart" everywhere in the game and tell the reels story instead, matching the itch page: the robot hunts its maker's old reels for what he left behind; one reel is stuck on fast, one on slow; in the frames it grabs a trinket, an idea, or a bad part from the wrong set. Keep the lines short.
 
 **Changed:**
 - **Title line:** *A wind-up robot hunts its maker's old reels for what he left behind.* The itch tagline ("rummages through ... the cutting-room floor") ran past both sides of the title plate, so the game uses the shorter line. ![title](devlog-shots/2026-11-15_2220_title-new-line.png)
@@ -1922,7 +1965,7 @@ I found the title menu still live under the opening splash. This evening's first
 ---
 
 ### 22:45 to 22:50: A last check before the build, and gremlin bits that stay out of the way
-**Asked:** have Fable check Opus's evening work before the build, tidy this log, and one more note from me: when a gremlin bursts, most of the bits should fly behind the robot and only a few in front, so the hit is less confusing.
+**My direction:** have Fable check Opus's evening work before the build, tidy this log, and one more note from me: when a gremlin bursts, most of the bits should fly behind the robot and only a few in front, so the hit is less confusing.
 
 **Done:**
 - **Gremlin bits.** Each of the 18 parts was thrown sideways at random, towards the camera as often as away from it, so half the bits crossed in front of the robot. The camera sits on one side of the strips, so the sideways throw now leans away from it: most bits go behind him and a few still come forward. Script: `art/clarity/make_bits1.py`.
@@ -1934,7 +1977,7 @@ I found the title menu still live under the opening splash. This evening's first
 ---
 
 ### 22:50 to 23:00: The final build, and the itch page brought up to date
-**Asked:** check my itch page, confirm which gameplay video it uses, build the final package, and tell me where to read this log on my own machine.
+**My direction:** check my itch page, confirm which gameplay video it uses, build the final package, and tell me where to read this log on my own machine.
 
 **Done:**
 - **The build.** Shipping package `X:\GameJamBuilds\ship_1115_2300` (529 MB), cook and build clean in 2 minutes 23 seconds, no errors, no "Default Material" and no Suno assets in the log. Zipped as `X:\GameJamBuilds\mindseed_ReelLives.zip` (383 MB, top folder `ReelLives`, `ReelLives.exe`, no save file inside). The 16:52 zip is kept beside it as `mindseed_ReelLives_old1652.zip`.
@@ -1950,16 +1993,16 @@ I found the title menu still live under the opening splash. This evening's first
 ---
 
 ### 23:00 to 23:15: A dev log that looks like the game
-**Asked:** the public log was an eyesore: a plain GitHub page. Give it a style. Then take the "4 days, 138 entries" tiles off it (a tired thing), publish it, and make the itch page look as close to it as possible.
+**My direction:** the public log was an eyesore: a plain GitHub page. Give it a style. Then take the "4 days, 138 entries" tiles off it (a tired thing), publish it, and make the itch page look as close to it as possible.
 
-**Done:** the log is now also a page in the game's own colours and fonts: the logo on a dark theatre background, a film-strip banner for each day, every entry a card with its time, coloured labels for Asked, Done, Checked and Setback, pictures that enlarge on a click, and the cutting room floor with every dropped idea struck through. It is built from this file by `scratch/devlog_page.py` and published with GitHub Pages. The itch page has the same colours, saved through its theme editor.
+**Done:** the log is now also a page in the game's own colours and fonts: the logo on a dark theatre background, a film-strip banner for each day, every entry a card with its time, coloured labels for My direction, Done, Checked and Setback, pictures that enlarge on a click, and the cutting room floor with every dropped idea struck through. It is built from this file by `scratch/devlog_page.py` and published with GitHub Pages. The itch page has the same colours, saved through its theme editor.
 
 **Cut:** the stat tiles. **Not done:** the itch fonts and banner, the build upload and making the page public. My usage limit ran low, so the rest goes to an Opus session with a written hand-off (`docs/NEXT-SESSION-PROMPT-FINAL.md`).
 
 ---
 
 ### 23:20 to 23:45: The build goes up, the videos get smaller
-**Asked:** I dragged the 383 MB zip onto the itch page myself, since the agent's Chrome tool can't upload anything over 10 MB. Then: get two new cuts ready for YouTube with ffmpeg.
+**My direction:** I dragged the 383 MB zip onto the itch page myself, since the agent's Chrome tool can't upload anything over 10 MB. Then: get two new cuts ready for YouTube with ffmpeg.
 
 **Done:** both re-encoded with H.264 at CRF 21, a steady 30 fps and 384 kbps audio, set up so YouTube can start processing before the upload finishes. `mindseed_ReelLives_youtube.mp4` (1440p, 1:45) went from 247 MB to 233 MB. `mindseed_Reel-Lives_gameplay_short_youtube.mp4` went from 266 MB to 61 MB.
 
