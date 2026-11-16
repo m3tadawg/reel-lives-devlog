@@ -23,10 +23,10 @@ Times are South Africa time (UTC+2). Screenshots are in `devlog-shots/`. Revised
 
 ### Design
 - **The game.** A runner across parallel film strips, each strip a different life of the same person, with choices that branch like a multiverse; a clapperboard as the weapon; gremlins that wreck the reels; the Cut chewing the film from behind. Strips are stacked top to bottom, with the film running right to left and the runner facing right. I talked it through with Claude on 2026-11-11, and Claude wrote it up.
-- **The robot.** A wind-up robot with a clapperboard for a head, the clapper as his jaw, a spring neck, a key in his back, jointed limbs and big flat shoes. I drew him in Affinity and used image generators on fal to develop him, ending with the brass ball-bodied redesign with the red bulb and chalk eyes. The 3D models were built to these pictures. ![First sketch of the robot, in Affinity](devlog-shots/2026-11-12_1515_shane-robot-sketch.png) ![The robot design render the final model was built to](devlog-shots/2026-11-14_2352_shane-robot-v2-design.jpg)
+- **The robot.** A wind-up robot with a clapperboard for a head, the clapper as his jaw, a spring neck, a key in his back, jointed limbs and big flat shoes. I roughly sketched it in Affinity and used image generators on fal to develop him, ending with the brass ball-bodied redesign with the red bulb and chalk eyes. The 3D models were built to these pictures. ![First sketch of the robot, in Affinity](devlog-shots/2026-11-12_1515_shane-robot-sketch.png) ![The robot design render the final model was built to](devlog-shots/2026-11-14_2352_shane-robot-v2-design.jpg)
 - **The gremlins.** The idea comes from the old Rhodesian Broadcasting Corporation technical-fault card, a little drawing of gremlins messing up the reels. The gremlin in the game started as my character sheet and parts sheet (red fedora, bat ears, huge grin, waistcoat, two-tone shoes), which I turned into a 3D model with an image-to-3D tool. The scripted gremlins before it were stand-ins. ![The gremlin, cut into parts](devlog-shots/2026-11-14_1830_shane-gremlin-parts-sheet.jpg)
-- **The look.** I made the two concept renders that set the target look, from a prompt Claude and I wrote. I picked the HUD (UI variation 4) and the pop-up cards, and turned down the slate as the HUD. ![First concept render](devlog-shots/2026-11-12_0937_shane-concept-render-1.jpg)
-- **The story.** The Maker and his three lives, the friend and the foe, and the final reels story (an old projector, one reel stuck on fast and one on slow, and the things the Maker left behind). Claude proposed some of it; I chose what stayed.
+- **The look.** I made the two concept renders that set the target look. ![First concept render](devlog-shots/2026-11-12_0937_shane-concept-render-1.jpg)
+- **The story.** The Maker and his three lives, the friend and the foe, and the final reels story (an old projector, one reel stuck on fast and one on slow, and the things the Maker left behind).
 - **Logo and itch art.** I redrew the REEL LIVES logo in Affinity to replace a generated one with wonky lettering, and made the itch thumbnail.
 
 ### Sound, music and video
@@ -36,8 +36,8 @@ Times are South Africa time (UTC+2). Screenshots are in `devlog-shots/`. Revised
 - **Videos:** the gameplay video on YouTube and itch. I also uploaded the build.
 
 ### Testing and decisions
-- I played every build, and the notes from those plays drove most of the work after the first grey box. My brother played a test build too.
-- The Director's calls in the entries are my decisions, including where I went against a suggestion (the slate as the HUD, the bite rule, the chalk robot in the jar).
+- I played every build, and the notes from those plays drove most of the work after the first grey box.
+- The Director's calls in the entries are my decisions. A lot of the game concept changed during the course of the four days.
 - I set the fal budget (about $30 that cannot be refilled), approved each paid generation and chose what was cut.
 
 ### The agents
@@ -54,7 +54,7 @@ Claude (Fable as the lead, Opus and Sonnet as workers, plus headless workers on 
 - My idea: **Reel Lives**, an isometric runner across parallel film strips, each one a different life of the same person, with the choices branching like a multiverse. A clapperboard knocks the gremlins off the reels, and the Cut chews up the film from behind. Strips stack top to bottom, the film runs right to left and the runner faces right.
 - The gremlins: I remembered the Rhodesian Broadcasting Corporation's technical-fault card, a little drawing of gremlins messing up the reels, and wanted creatures built from the things that ruin film.
 - I talked it through with Claude, which pushed on it and wrote my decisions up. No code, assets or levels. Declared as pre-jam material.
-- Tried an agent-driven overnight download of UE 5.9 Preview with a scheduled task. It got too fiddly, so I cancelled it and started the download by hand.
+- Tried an agent-driven overnight download of UE 5.9 Preview with a scheduled task. Rural internet and a terrible network mean I need to do it all after midnight. It got too fiddly, so I cancelled it and started the download by hand.
 
 ---
 
@@ -67,28 +67,27 @@ Claude (Fable as the lead, Opus and Sonnet as workers, plus headless workers on 
 
 ### ~08:40: First setback: the compiler
 - My first C++ project failed to build. UE 5.9 bans MSVC 14.51 (the only one I had) and wants 14.50.
-- The agent had flagged this risk the night before ("first C++ class will tell") but never checked it before the jam. Lesson: a setup isn't ready until an empty C++ project has built.
-- **Director's call:** no download mid-jam. Dropped C++ and started a new **Blueprint-only** project. Blueprint-only projects package without Visual Studio.
+- **Director's call:** No download mid-jam due to network. Dropped C++ and started a new **Blueprint-only** project. Blueprint-only projects package without Visual Studio.
 
 ### ~09:00: Full theme text
 - Read the full brief. "Build the feature that didn't make it" fits Reel Lives as it stands. "You're directing the agents too" became this log.
 - Rule for all agents from now on: log every meaningful step, screenshot the key moments, and keep the cutting room floor below.
 
 ### 09:14: Idea refinement pass (no build work)
-- Asked Claude to review the brief and a side chat I'd had with another LLM (Meta AI) about a similar "jump between film-strip timelines" runner, and make the visuals less vague.
+- Asked Claude to review the brief and an idea I had about multiple dimensions as film strips: an arcade game where the player can jump between film-strip timelines.
 - Added a "Refinement pass" section to the design brief: an ASCII mock of one screen, the player taking on the look of whichever strip they're on, one material per life, the childhood section as the tutorial, and locked rules (three inputs; the clap hits only your strip; no clapping mid-hop; hit-stop).
-- **Kept from the Meta chat:** one mesh with a different tint per lane, the order it teaches things in, the "commit to a lane to attack" rule, and deliberately taking a debuff as a puzzle.
+- **Kept from the floor:** one mesh with a different tint per lane, the order it teaches things in, the "commit to a lane to attack" rule, and deliberately taking a debuff as a puzzle.
 - **Cut:** its Past/Present/Future framing and its enemy roster (ours carry the theme better). Proposed cutting 5 strips down to 3 for the build.
 - **Director's call:** locked 3 strips (1 → 3 → 1). Five is a stretch goal.
 
 ### 09:25: Art direction and asset pipeline (draft)
-- Asked Claude how to build the look with the jam's text-to-3D tokens and Blender MCP. My brief: semi steampunk / dieselpunk, old paper, old film, vintage, not real but close to it.
-- Claude drafted an art direction: a style called "Nitratepunk" (1900-1940 film-industry machinery: brass, celluloid, card, halftone paper), the scene in layers (supply spools on the right, the Cut on the left), one house material plus a projector post-process to unify everything, where each asset comes from, and a HUD made of studio objects (slate, footage counter, film cans, gauge, ticket stub, intertitles).
-- Key idea kept: throw away the text-to-3D textures and apply our own material. Pop-up life scenes are text-to-3D models rendered flat in Blender with ink lines, so they match without Midjourney.
+- Asked Claude how to build the look with the jam's text-to-3D tokens and Blender MCP. My brief: 1920s, silver screen, semi steampunk / dieselpunk, old paper, old film, vintage, not real but close to it.
+- Claude drafted an art direction: a style called "Nitratepunk" (1900-1940 film-industry machinery: brass, celluloid, card, halftone paper). We then decided on a scene in layers (supply spools on the right, the Cut on the left), one house material plus a projector post-process to unify everything, where each asset comes from, and a HUD made of studio objects (slate, footage counter, film cans, gauge, ticket stub, intertitles).
+- Key idea kept: throw away the text-to-3D textures and apply our own material. Pop-up life scenes are text-to-3D models rendered flat in Blender with ink lines.
 - Not decided yet: the style name, which text-to-3D service and how many tokens.
 
 ### 09:29: Concept art prompts and a juice bible
-- Asked for a descriptive concept-art prompt with the UI and as many elements as possible, and stressed that the game needs tons of game, audio and excitement juice.
+- Asked for a descriptive concept-art prompt with the UI and as many elements as possible, and stressed that the game needed tons of game, audio and excitement juice.
 - Claude wrote a concept prompt: a master in-game screenshot prompt with the full HUD, a negative prompt, five short variant prompts (title screen, the Cut, gremlin sheet, hero sheet, end montage), and a juice table that gives every action visual, audio and excitement feedback.
 - Biggest new idea: an unseen **live accompanist** (ragtime piano and organ that react to play), a **cinema audience** (gasps, laughs, applause) and a **megaphone director** ("ACTION!" / "CUT!" / "THAT'S A WRAP!"). Hops are jump cuts. Combos are counted as "Takes".
 - Rule: juice goes in from the grey box and is part of the kill test.
