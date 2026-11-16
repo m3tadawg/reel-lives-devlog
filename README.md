@@ -77,7 +77,7 @@ Claude (Fable as the lead, Opus and Sonnet as workers, plus headless workers on 
 - Asked Claude to review the brief and an idea I had about multiple dimensions as film strips: an arcade game where the player can jump between film-strip timelines.
 - Added a "Refinement pass" section to the design brief: an ASCII mock of one screen, the player taking on the look of whichever strip they're on, one material per life, the childhood section as the tutorial, and locked rules (three inputs; the clap hits only your strip; no clapping mid-hop; hit-stop).
 - **Kept from the floor:** one mesh with a different tint per lane, the order it teaches things in, the "commit to a lane to attack" rule, and deliberately taking a debuff as a puzzle.
-- **Cut:** its Past/Present/Future framing and its enemy roster (ours carry the theme better). Proposed cutting 5 strips down to 3 for the build.
+- **Cut:** a Past/Present/Future framing and an earlier enemy roster (ours carry the theme better). Proposed cutting 5 strips down to 3 for the build.
 - **Director's call:** locked 3 strips (1 → 3 → 1). Five is a stretch goal.
 
 ### 09:25: Art direction and asset pipeline (draft)
@@ -2011,8 +2011,8 @@ Ideas considered and dropped, with the reason.
 | When | Idea | Why it was cut |
 |---|---|---|
 | 2026-11-11 | Scheduled overnight engine download | Too fragile (launcher crashes, cancelled installs); done by hand instead |
-| 2026-11-12 | Past/Present/Future strips (Meta chat) | Parallel lives of one person carry the theme better |
-| 2026-11-12 | Censor-bar debuff (Meta chat) | Parked; maybe a later "Blotter" gremlin |
+| 2026-11-12 | Past/Present/Future strips | Parallel lives of one person carry the theme better |
+| 2026-11-12 | Censor-bar debuff | Parked; maybe a later "Blotter" gremlin |
 | 2026-11-12 | Five strips at mid-life | Too much to read at speed in isometric view and too much to build; 3 locked, 5 kept as a stretch goal |
 | 2026-11-12 | C++ project | Compiler banned by UE 5.9; a mid-jam download wasn't worth it, so Blueprint-only |
 | 2026-11-12 | Human runner | Skinned character and run cycle are the costliest art in the game; a rigid robot moves by Blueprint and fits the brass world |
